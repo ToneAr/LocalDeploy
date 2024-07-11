@@ -20,9 +20,11 @@ $LocalDeployments;
 
 Begin["`Private`"];
 
-$LocalDeployments = <||>;
+If[!ValueQ[$LocalDeployments],
+	$LocalDeployments = {}
+];
 
-keys = {"Listener","Socket","LocalIPAddress","Port","BaseURL","Endpoints"(*,"Hyperlinks"*)};
+keys = {"Name","Listener","Socket","LocalIPAddress","Port","BaseURL","Endpoints"};
 localDeploymentQ[in_] := AssociationQ[in] && AllTrue[keys, KeyExistsQ[in,#]&];
 $icon = Graphics[Import[PacletObject["LocalDeploy"]["AssetLocation", "Icon"]],
 		ImageSize -> Dynamic[{ 
@@ -84,21 +86,28 @@ logFunction = {expr,label} |->
 		];
 		
 	];
-
-CORSHeaders = <|
-	"Access-Control-Allow-Origin"->"*",
-	"Access-Control-Allow-Methods"->"GET, POST, OPTIONS",
-	"Access-Control-Allow-Headers"->"Origin, Content-Type, Accept"
-|>;
-generateCORSHTTPResponse[expr_,req_] := Module[{
+generateCORSHTTPResponse[expr_,req_]:=Module[{
   		response = GenerateHTTPResponse[expr,req]
 	},
+	Print[HTTPResponse[
+		response["Body"],
+		<|
+			"Headers" -> <|
+				<|response["Headers"]|>,
+				"Access-Control-Allow-Origin"->"*",
+				"Access-Control-Allow-Methods"->"GET, POST, OPTIONS",
+				"Access-Control-Allow-Headers"->"Origin, Content-Type, Accept"
+			|>
+		|>
+	]["Headers"]];
 	HTTPResponse[
 		response["Body"],
 		<|
 			"Headers" -> <|
 				<|response["Headers"]|>,
-				CORSHeaders
+				"Access-Control-Allow-Origin"->"*",
+				"Access-Control-Allow-Methods"->"GET, POST, OPTIONS",
+				"Access-Control-Allow-Headers"->"Origin, Content-Type, Accept"
 			|>
 		|>
 	]
@@ -107,17 +116,14 @@ generateCORSHTTPResponse[expr_,req_] := Module[{
 ClearAll[LocalDeploy];
 Options[LocalDeploy] = {
 	"LogDirectory" -> FileNameJoin[{$HomeDirectory, "LocalDeploy-logs"}],
-	OverwriteTarget -> True,
+	"OverwriteTarget" -> True,
 	"Log" -> False,
 	"LogFunction" -> logFunction,
 	HandlerFunctions -> <||>
 };
-portP = _?NumericQ|Automatic;
-LocalDeploy[
-	expr_,
-	port: portP : Automatic,
-	OptionsPattern[]
-] := Enclose@Module[{
+LocalDeploy[expr_, arg_, opts:OptionsPattern[]] := 
+	LocalDeploy[expr, {arg}, opts];
+LocalDeploy[expr_, {name_String : CreateUUID[], port:(_?NumericQ|Automatic) : Automatic}, opts:OptionsPattern[]] := Enclose@Module[{
 		listener,server,url,endpoints,
 		handlers = OptionValue[HandlerFunctions],
 		log = If[OptionValue["Log"],
@@ -127,27 +133,34 @@ LocalDeploy[
 	},
 
 	(*
-		Create listener socket
+		Extract endpoints and Iconize their expressions for
+		display in the LocalDeploymentObject
+	*)
+	endpoints = <|
+		#[[0]][ #[[1]], Evaluate[Iconize[ #[[2]] ] ]]& /@
+			If[MatchQ[expr, _URLDispatcher],
+				First[expr],
+				{"/" :> expr}
+			]
+	|>;
+
+	(* AppendTo[$LocalDeployments, server]; *)
+
+	(*
+		Main
 	*)
 	listener = ConfirmMatch[#, SocketListener[__]]& @
 		SocketListen[
 			(*
-				Open server socket and add to $LocalDeployments
+				Open server socket
 			*)
-			server = SocketOpen[port, "TCP"];
-			AppendTo[$LocalDeployments, port -> server];
-			server
+			server = SocketOpen[port, "TCP"]
 			,
 			Function[{data},
 				Module[{res,req,
 						client = data["SourceSocket"]
 					},
-					
-					(*
-						Print incoming request to console
-					*)
 					Print["HTTPRequest:", "\n", data["Data"], "\n"];
-					
 					WithCleanup[
 						(*
 							Import HTTPRequest
@@ -168,9 +181,25 @@ LocalDeploy[
 							Handle OPTIONS request
 						*)
 						res = If[req["Method"] === "OPTIONS",
+							Print[HTTPResponse[
+								"",
+								<|
+									"Headers" -> <|
+										"Access-Control-Allow-Origin"->"*",
+										"Access-Control-Allow-Methods"->"GET, POST, OPTIONS",
+										"Access-Control-Allow-Headers"->"Origin, Content-Type, Accept"
+									|>
+								|>
+							]["Headers"]];
 							HTTPResponse[
 								"",
-								<|"Headers" -> CORSHeaders|>
+								<|
+									"Headers" -> <|
+										"Access-Control-Allow-Origin"->"*",
+										"Access-Control-Allow-Methods"->"GET, POST, OPTIONS",
+										"Access-Control-Allow-Headers"->"Origin, Content-Type, Accept"
+									|>
+								|>
 							],
 							(*
 								Handle actual request
@@ -187,10 +216,7 @@ LocalDeploy[
 								<|"HTTPRequest" -> req, "HTTPResponse" -> Missing[]|>
 							|>
 						];
-						
-						(*
-							Print outgoing response to console
-						*)
+
 						Print["Response Headers: ", "\n", res["Headers"], "\n"];
 						
 						(*
@@ -215,47 +241,25 @@ LocalDeploy[
 		<|
 			"Scheme" -> "http",
 			"Domain" -> server["DestinationHostname"],
-			"Port" 	 -> server["DestinationPort"]
+			"Port" -> server["DestinationPort"]
 		|>
 	];
-
-	(*
-		Extract endpoints and Iconize their expressions for
-		display in the LocalDeploymentObject
-	*)
-	endpoints = <|
-		#[[0]][ #[[1]], Evaluate[Iconize[ #[[2]] ] ]]& /@
-			If[MatchQ[expr, _URLDispatcher],
-				First[expr],
-				{"/" :> expr}
-			]
-	|>;
-
+		
 	(*
 		Return
 	*)
 	LocalDeploymentObject[
 		<|
-			"Listener" 		 -> listener,
-			"Socket" 		 -> server,
+			"Name"->name,
+			"Listener" -> listener,
+			"Socket" -> server,
 			"LocalIPAddress" -> server["DestinationHostname"],
-			"Port" 			 -> server["DestinationPort"],
-			"BaseURL" 		 -> url,
-			"Endpoints" 	 -> endpoints
+			"Port" -> server["DestinationPort"],
+			"BaseURL" -> url,
+			"Endpoints" -> endpoints
 		|>
 	]
 ];
-
-
-LocalDeploymentObject /: Close[socket_SocketObject] /; MemberQ[Values[$LocalDeployments], socket] :=
-	KeyDrop[$LocalDeployments, socket["DestinationPost"]];
-LocalDeploymentObject /: DeleteObject[socket_SocketListener] /; MemberQ[Values[$LocalDeployments], socket["Socket"]] :=
-	KeyDrop[$LocalDeployments, socket["Socket"]["DestinationPost"]];
-
-LocalDeploymentObject /: (Close|DeleteObject)[LocalDeploymentObject[assoc_Association]] :=
-	Close[assoc["Socket"]];
-
-
 
 End[];
 EndPackage[];

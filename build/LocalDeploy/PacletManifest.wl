@@ -1,0 +1,31 @@
+<|
+    "Files"
+    ->
+    {
+        <|
+            "File"
+            ->
+            File[
+                "Kernel\\LocalDeploy.wl"
+            ]
+            ,
+            "Hash"
+            ->
+            "767a5635addaf57222c124ef2226d7151894ab2ab1d07c460afe33f5ac9670cb"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Resources\\icon.wxf"
+            ]
+            ,
+            "Hash"
+            ->
+            "11243e3be6366572a0e24a2da3da61b3a1f04814644f3ff1f92a9946bccf84fb"
+                
+        |>
+    }
+|>
