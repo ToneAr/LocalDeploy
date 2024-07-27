@@ -1,8 +1,8 @@
 PacletObject[
     <|
         "Name" -> "LocalDeploy",
-        "Version" -> "0.2.12.5",
-        "WolframVersion" -> "14.+",
+        "Version" -> "0.2.15",
+        "WolframVersion" -> "13.+",
         "Extensions" ->
             {
                 {"Kernel",
