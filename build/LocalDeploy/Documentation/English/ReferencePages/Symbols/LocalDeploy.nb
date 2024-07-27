@@ -1,0 +1,409 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15885,        399]
+NotebookOptionsPosition[     11828,        314]
+NotebookOutlinePosition[     14311,        374]
+CellTagsIndexPosition[     14226,        369]
+WindowTitle->LocalDeploy
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {GridBox[{
+      {
+       ItemBox[Cell[BoxData[
+         RowBox[{
+          TemplateBox[{12},
+           "Spacer1"], Cell["LOCAL DEPLOY SYMBOL", "PacletNameCell",
+           TextAlignment->Center,ExpressionUUID->
+           "1d1959a5-e994-8447-9396-1fdf36bbcce7"], 
+          TemplateBox[{8},
+           "Spacer1"]}]],
+         TextAlignment->Center,ExpressionUUID->
+         "9f78dc4c-c45a-154b-a50a-7e3724e4f04f"],
+        Background->RGBColor[0.490196, 0.576471, 0.690196],
+        ItemSize->Full], ""}
+     },
+     GridBoxAlignment->{"Rows" -> {{Center}}},
+     GridBoxItemSize->{"Columns" -> {Full, 
+         Scaled[0.02]}, "Rows" -> {{2.5}}}], Cell[TextData[Cell[BoxData[
+     TagBox[
+      ActionMenuBox[
+       FrameBox[Cell[TextData[{
+         "URL",
+         " ",
+         Cell[BoxData[
+          GraphicsBox[
+           {GrayLevel[0.66667], Thickness[0.13], 
+            LineBox[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]},
+           AspectRatio->1,
+           ImageSize->20,
+           PlotRange->{{-3, 4}, {-1, 1}}]],ExpressionUUID->
+          "37b69af9-da6e-3f41-b64c-2b353425c59b"]
+        }],ExpressionUUID->"36c31816-4488-db48-8779-f9452c5229e8"],
+        StripOnInput->False],{
+       "\"LocalDeploy/ref/LocalDeploy\"" :> None, 
+        "\"Copy Wolfram Documentation Center URL\"" :> 
+        Module[{DocumentationSearch`Private`nb$}, 
+          DocumentationSearch`Private`nb$ = 
+           NotebookPut[
+            Notebook[{Cell["LocalDeploy/ref/LocalDeploy"]}, Visible -> 
+              False]]; SelectionMove[
+           DocumentationSearch`Private`nb$, All, Notebook]; 
+          FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+          NotebookClose[DocumentationSearch`Private`nb$]; Null], Delimiter, 
+        "\"Copy web URL\"" :> 
+        Module[{DocumentationSearch`Private`nb$}, 
+          DocumentationSearch`Private`nb$ = 
+           NotebookPut[
+            Notebook[{
+              Cell[BoxData[
+                MakeBoxes[
+                 Hyperlink[
+                  "http://reference.wolfram.com/language/LocalDeploy/ref/\
+LocalDeploy.html"], StandardForm]], "Input", TextClipboardType -> 
+                "PlainText"]}, Visible -> False]]; 
+          SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+          FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+          NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+        "\"Go to web URL\"" :> 
+        FrontEndExecute[{
+          NotebookLocate[{
+            URL[If[TrueQ[False], 
+                "http://reference.wolfram.com/system-modeler/", 
+                "http://reference.wolfram.com/language/"] <> 
+              "LocalDeploy/ref/LocalDeploy" <> ".html"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"],
+      MouseAppearanceTag["LinkHand"]]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "28be3f3d-7fd1-594e-b748-0f87bc27789f"]], "AnchorBar",
+     CacheGraphics->False,ExpressionUUID->
+     "f82283e0-560a-d346-ba21-4460e3c041d0"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"4c21e577-8ee5-6c48-a992-8f11222f523f"],
+
+Cell["LocalDeploy`", "ContextNameCell",ExpressionUUID->"b97c2575-606a-c64a-a8e3-16c2f9d76a82"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[GridBox[{
+   {Cell[TextData[{
+     Cell[
+     "LocalDeploy", "ObjectName",ExpressionUUID->
+      "2b95414f-2523-6142-be30-6831bd4285e6"],
+     Cell[BoxData[
+      TemplateBox[{8},
+       "Spacer1"]],ExpressionUUID->"2d098cdf-6af3-c240-a4ae-d7c86185bfd6"],
+     Cell[BoxData[
+     ""], "ObjectNameTranslation",ExpressionUUID->
+      "35bbbbb9-3eab-404d-ab58-ac6f937bd10e"]
+    }],ExpressionUUID->"750c6453-19c5-4046-983f-3fdf270c1cfd"], 
+    "\[SpanFromLeft]"}
+  }]], "ObjectNameGrid",ExpressionUUID->"8dc1eb68-156a-6640-9217-\
+770e134d4e4b"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell["\<\
+LocalDeploy[ \!\(\*StyleBox[\"expr\", \"TI\"]\) ] deploys a socket listener \
+on an available local which can take request and return a \
+LocalDeploymentObject. LocalDeploy[ \!\(\*StyleBox[\"api\", \"TI\"]\), \
+\!\(\*StyleBox[\"port\", \"TI\"]\) ] deploys a socket listener on \
+\!\(\*StyleBox[\"port\", \"TI\"]\) which can take request and return a \
+LocalDeploymentObject.\
+\>",ExpressionUUID->"fba0e310-66ae-0c45-ae14-2ef60f02a012"]}
+  }]], "Usage",
+ CellID->392038242,ExpressionUUID->"bfc837f6-20fe-a649-9102-e077fef2cf02"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    DynamicBox[ToBoxes[
+      If[
+       MatchQ[
+        CurrentValue[
+         EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, 
+         Closed], 
+        Alternatives[Open, True]], 
+       Style[
+        Graphics[{
+          Thickness[0.18], 
+          RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+          Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+         PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+        0.68 Inherited], 
+       Rotate[
+        Style[
+         Graphics[{
+           Thickness[0.18], 
+           RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+           Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+          PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+         0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+     ImageSizeCache->{
+      13.600000000000001`, {0.5800000000000001, 13.020000000000001`}}]],
+    ExpressionUUID->"a788b5e8-9ca5-3443-9f71-882ca02d3281"],
+   Cell[BoxData[
+    TemplateBox[{1},
+     "Spacer1"]],ExpressionUUID->"d4da265b-941e-5340-89c1-8ea2935b120d"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"8f272ca0-c7ef-3e41-822a-08f522a697b3"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"1d5609e5-5c43-a64f-9a05-bb4122472b90"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CacheGraphics->False,
+ CellID->300252191,ExpressionUUID->"6277d785-d9ee-f144-ade8-e6ff351d5fd4"],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Nothing"]], "paclet:ref/Nothing"},
+  "RefLink",
+  BaseStyle->{"InlineFormula"}]], "InlineFormula",
+ FontFamily->
+  "Source Sans Pro",ExpressionUUID->"c7987e20-d840-1746-9b7b-ac0c8937d0c4"]], \
+"Input",
+ CellID->21754671,ExpressionUUID->"0d1be2d1-3b48-234a-b399-cd36591c5e5f"],
+
+Cell["The following options can be given: ", "Notes",
+ CellID->297910401,ExpressionUUID->"6aa57ce2-08bc-074e-b5a0-0fe59334b2b3"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "375b03d8-9371-d94c-9019-9b1308026377"], 
+    TemplateBox[{
+      Cell[
+       TextData["OverwriteTarget"]], "paclet:ref/OverwriteTarget"},
+     "RefLink",
+     BaseStyle->{"3ColumnTableMod"}], 
+    TemplateBox[{
+      Cell[
+       TextData["True"]], "paclet:ref/True"},
+     "RefLink",
+     BaseStyle->{"3ColumnTableMod"}], Cell["\<\
+OverwriteTarget is an option for functions like CopyFile that specifies \
+whether to overwrite if target files already exist.\
+\>", "TableText",ExpressionUUID->"a4921719-f110-6b47-b1e7-bb380fa6509c"]},
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "dcde5bf1-5e5d-ae4f-987a-b4602f1b3ee6"], 
+    TemplateBox[{
+      Cell[
+       TextData["HandlerFunctions"]], "paclet:ref/HandlerFunctions"},
+     "RefLink",
+     BaseStyle->{"3ColumnTableMod"}], 
+    RowBox[{"<|", "|>"}], Cell["\<\
+HandlerFunctions is an option that specifies functions to apply when events \
+are generated.\
+\>", "TableText",ExpressionUUID->"063a473f-0d76-c143-b623-42bd0a59620d"]},
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "c469f188-5fe2-db4a-a878-0c112affaf86"], 
+    TemplateBox[{
+      Cell[
+       TextData["Asynchronous"]], "paclet:ref/Asynchronous"},
+     "RefLink",
+     BaseStyle->{"3ColumnTableMod"}], 
+    TemplateBox[{
+      Cell[
+       TextData["True"]], "paclet:ref/True"},
+     "RefLink",
+     BaseStyle->{"3ColumnTableMod"}], Cell["\<\
+Asynchronous is an option for WolframAlpha that determines whether to use the \
+asynchronous features of the Wolfram|Alpha API.\
+\>", "TableText",ExpressionUUID->"0ae85f29-a476-8547-9f97-857b56d7b1bd"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True}}}},
+ CellID->267333291,ExpressionUUID->"0763535a-0a8d-6c4f-a2c9-00c28aa9b78a"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  DynamicBox[ToBoxes[
+    If[
+     MatchQ[
+      CurrentValue[
+       EvaluationNotebook[], {
+       TaggingRules, "Openers", "PrimaryExamplesSection"}, Open], 
+      Alternatives[True, Open]], 
+     Style[
+      Graphics[{
+        Thickness[0.18], 
+        RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+        Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+       PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+      0.68 Inherited], 
+     Rotate[
+      Style[
+       Graphics[{
+         Thickness[0.18], 
+         RGBColor[0.8509803921568627, 0.396078431372549, 0], 
+         Line[{{-1.8, 0.5}, {0, 0}, {1.8, 0.5}}]}, AspectRatio -> 1, 
+        PlotRange -> {{-3, 4}, {-1, 1}}, ImageSize -> 20], Magnification -> 
+       0.68 Inherited], Rational[1, 2] Pi, {-1.65, -1}]]],
+   ImageSizeCache->{13.600000000000001`, {5., 8.600000000000001}}]],
+  ExpressionUUID->"9b5c89e8-5de0-df40-a11e-ca2698c860e0"],
+ Cell[BoxData[
+  TemplateBox[{1},
+   "Spacer1"]],ExpressionUUID->"4ebee7e0-4a0e-d044-9f75-50fad2677a88"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(0)", "ExampleCount",ExpressionUUID->
+  "e93e862e-631a-864b-ac45-73a160ca4f4b"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CacheGraphics->False,
+ CellTags->"PrimaryExamplesSection",
+ CellID->14952756,ExpressionUUID->"0cc3bfcc-caa6-5749-aee7-420532c7af85"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<LocalDeploy`\>\"", "]"}]], "Input", "ExampleInitialization",
+ CellLabel->"In[1]:=",
+ CellID->481764,ExpressionUUID->"0cc7a456-1ab1-5c48-8c79-86b9bb469fd0"]
+}, Dynamic[CurrentValue[
+ EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, 
+  Closed]]]],
+
+Cell[BoxData[GridBox[{
+   {
+    DynamicBox[FEPrivate`ImportImage[
+      FrontEnd`FileName[{"Documentation", "FooterIcons"}, 
+       "RelatedFunction.png"]],
+     ImageSizeCache->{50., {27., 33.}}], GridBox[{
+      {
+       StyleBox[
+        RowBox[{"See", " ", "Also"}], "SeeAlsoSection"]}
+     }]}
+  }]], "SeeAlsoSection",ExpressionUUID->"025f33e9-dbb7-d14c-a7dd-\
+74fc23f45367"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"af6dadb0-b431-7442-b0b6-171c78801792"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{900, 830.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"LocalDeploy",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "", "LinkTrails" -> "", 
+  "ExampleCounter" -> 1, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, "ExampleSection" -> {"0" -> Open}, 
+    "AllOptsTable" -> Closed, "NotesSection" -> Closed}, "NewStyles" -> True, 
+  "CitationPopupData" -> $Failed, "ShowCitation" -> False, "HasOptions" -> 
+  True, "RootCaptions" -> "", "HeaderCoreAreaLink" -> {}, 
+  "Metadata" -> {
+   "built" -> "{2024, 7, 25, 20, 18, 19.4359643}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "LocalDeploy`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Local Deploy Symbol", "language" -> "en", "paclet" -> "LocalDeploy", 
+    "status" -> "None", "summary" -> 
+    "LocalDeploy[StyleBox[\"expr\",\\ \"TI\"] ] deploys a socket listener on \
+an available local which can take request and return a LocalDeploymentObject. \
+LocalDeploy[StyleBox[\"api\",\\ \"TI\"], StyleBox[\"port\",\\ \"TI\"] ] \
+deploys a socket listener on StyleBox[\"port\",\\ \"TI\"] which can take \
+request and return a LocalDeploymentObject.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "LocalDeploy", "titlemodifier" -> "", 
+    "metadescription" -> "", "windowtitle" -> "LocalDeploy", "type" -> 
+    "Symbol", "uri" -> "LocalDeploy/ref/LocalDeploy"}},
+CellContext->"Global`",
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "14.0 for Microsoft Windows (64-bit) (December 12, 2023)", StyleDefinitions -> 
+  "DarkModeEverything.nb"],
+ExpressionUUID->"c93b6f26-75f0-6f40-a9b7-29a0a46b73d3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9626, 252, 1419, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"0cc3bfcc-caa6-5749-aee7-420532c7af85",
+   CellTags->"PrimaryExamplesSection",
+   CellID->14952756]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 14028, 362}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[583, 21, 3318, 78, 70, "AnchorBarGrid",ExpressionUUID->"4c21e577-8ee5-6c48-a992-8f11222f523f",
+ CellID->1],
+Cell[3904, 101, 94, 0, 70, "ContextNameCell",ExpressionUUID->"b97c2575-606a-c64a-a8e3-16c2f9d76a82"],
+Cell[CellGroupData[{
+Cell[4023, 105, 554, 14, 70, "ObjectNameGrid",ExpressionUUID->"8dc1eb68-156a-6640-9217-770e134d4e4b"],
+Cell[4580, 121, 568, 10, 70, "Usage",ExpressionUUID->"bfc837f6-20fe-a649-9102-e077fef2cf02",
+ CellID->392038242]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5185, 136, 1919, 48, 70, "NotesSection",ExpressionUUID->"6277d785-d9ee-f144-ade8-e6ff351d5fd4",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->300252191],
+Cell[7107, 186, 341, 9, 70, "Input",ExpressionUUID->"0d1be2d1-3b48-234a-b399-cd36591c5e5f",
+ CellID->21754671],
+Cell[7451, 197, 128, 1, 70, "Notes",ExpressionUUID->"6aa57ce2-08bc-074e-b5a0-0fe59334b2b3",
+ CellID->297910401],
+Cell[7582, 200, 1917, 46, 70, "3ColumnTableMod",ExpressionUUID->"0763535a-0a8d-6c4f-a2c9-00c28aa9b78a",
+ CellID->267333291]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "NotesSection"}, Closed]]]],
+Cell[CellGroupData[{
+Cell[9626, 252, 1419, 37, 70, "PrimaryExamplesSection",ExpressionUUID->"0cc3bfcc-caa6-5749-aee7-420532c7af85",
+ CellTags->"PrimaryExamplesSection",
+ CellID->14952756],
+Cell[11048, 291, 197, 3, 70, "Input",ExpressionUUID->"0cc7a456-1ab1-5c48-8c79-86b9bb469fd0",
+ CellID->481764]
+}, Dynamic[CurrentValue[EvaluationNotebook[], {TaggingRules, "Openers", "PrimaryExamplesSection"}, Closed]]]],
+Cell[11363, 299, 380, 11, 70, "SeeAlsoSection",ExpressionUUID->"025f33e9-dbb7-d14c-a7dd-74fc23f45367"],
+Cell[11746, 312, 78, 0, 70, "FooterCell",ExpressionUUID->"af6dadb0-b431-7442-b0b6-171c78801792"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
