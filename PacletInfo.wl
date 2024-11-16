@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Antonis Aristeidou",
     "License" -> "MIT",
     "PublisherID" -> "TonyAristeidou",
-    "Version" -> "1.0.0",
+    "Version" -> "1.1.0",
     "WolframVersion" -> "12.2+",
     "PrimaryContext" -> "TonyAristeidou`LocalDeploy`",
     "Extensions" -> {
