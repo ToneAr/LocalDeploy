@@ -10,6 +10,9 @@ PacletObject[
     "Version" -> "1.1.0",
     "WolframVersion" -> "12.2+",
     "PrimaryContext" -> "TonyAristeidou`LocalDeploy`",
+    "Dependencies" -> {
+			"KirillBelov/CSockets" -> "=>1.0.24"
+		},
     "Extensions" -> {
       {
         "Kernel",
