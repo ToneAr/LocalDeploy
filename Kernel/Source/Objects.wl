@@ -1,3 +1,4 @@
+(* ::Section:: *)(* Dependencies & Context *)
 BeginPackage["TonyAristeidou`LocalDeploy`", {
 	"TonyAristeidou`LocalDeploy`",
 	"TonyAristeidou`LocalDeploy`Private`",
@@ -24,6 +25,7 @@ keys = {
 	"EvaluationQueueTask",
 	"ResponseQueue"
 };
+
 
 (* -------------------------------------------------------------------------- *)
 (* ::Section:: *)(* LocalDeploymentObject *)
@@ -59,8 +61,10 @@ LocalDeploymentObject /: MakeBoxes[
 
 
 (* -------------------------------------------------------------------------- *)
-(* ::Section:: *)(* Up-Values *)
-(* Description:  Up-Value definitions for LocalDeploymentObject
+(* ::Section:: *)(* Up-Value: Close | DeleteObject *)
+(* Description:  Allows for graceful closing of local deployments using Close
+ *               or DeleteObject.
+ * Return:       _String | _Failure
  *)
 LocalDeploymentObject /: (Close|DeleteObject)[
 	dep:LocalDeploymentObject[assoc : _Association?localDeploymentQ]
@@ -69,20 +73,45 @@ LocalDeploymentObject /: (Close|DeleteObject)[
 	Quiet @ TaskRemove[assoc["QueueTask"]];
 	Close @ assoc["Socket"]
 );
+
+
+(* -------------------------------------------------------------------------- *)
+(* ::Section:: *)(* Up-Value: localDeployment[_String] *)
+(* Description:  Allows LocalDeploymentObject queried like an Association.
+ * Return:       _
+ *)
 LocalDeploymentObject[asc: _Association?localDeploymentQ][prop_] :=
 	Lookup[asc, prop];
+(* -------------------------------------------------------------------------- *)
+(* ::Section:: *)(* Up-Value: localDeployment["Properties"] *)
+(* Description:  Description
+ * Return:       ReturnPattern
+ *)
 LocalDeploymentObject[_Association?localDeploymentQ]["Properties"] := keys;
+(* -------------------------------------------------------------------------- *)
+(* ::Section:: *)(* Up-Value: URLExecute*)
+(* Description:  Allows URLExecute to be used with LocalDeploymentObjects directly.
+ * Return:       _
+ *)
 LocalDeploymentObject /: (
 	URLExecute[
 		LocalDeploymentObject[asc: _Association?localDeploymentQ],
 			rest___
 	]
 ) := (
-		URLExecute[asc["BaseURL"], rest]
-	);
+	URLExecute[asc["BaseURL"], rest]
+);
+
+
+(* -------------------------------------------------------------------------- *)
+(* ::Section:: *)(* Up-Value: Normal *)
+(* Description:  Returns the underlying Association of a LocalDeploymentObject.
+ * Return:       _Association?localDeploymentQ
+ *)
 LocalDeploymentObject /: Normal[
 	LocalDeploymentObject[asc: _Association?localDeploymentQ]
 ] := asc;
 
+(* ::Section:: *)(* End *)
 End[];
 EndPackage[];

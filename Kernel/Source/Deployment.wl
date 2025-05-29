@@ -1,64 +1,10 @@
+(* ::Section:: *)(* Dependencies & Context *)
 BeginPackage["TonyAristeidou`LocalDeploy`", {
 	"TonyAristeidou`LocalDeploy`",
 	"TonyAristeidou`LocalDeploy`Private`"
 }];
 
 Begin["`FileScope`Deploy`Private`"];
-
-(* -------------------------------------------------------------------------- *)
-(* ::Section:: *)(* handleClient *)
-(* Description:  Creates the callback called on client connection to the socket
- *               listener.
- * Return:       _Function
- *)
-handleClient[
-	expr_,
-	responseQueue_DataStructure,
-	handlers_Association
-] := Function[{data},
-	Block[{ req, cTask,
-			x = expr,
-			client = data["SourceSocket"],
-			dataBa = data["DataByteArray"]
-		},
-		Enclose[
-			(* Import HTTPRequest *)
-			req = ImportByteArray[dataBa, "HTTPRequest"];
-			(* HTTPResponseReceived handler *)
-			Lookup[handlers, "HTTPRequestReceived", Identity][
-				<|
-					data,
-					<|
-						"HTTPRequest" -> req,
-						"HTTPResponse" -> Missing[]
-					|>
-				|>
-			];
-			(* Start the HTTPResponse task *)
-			DistributeDefinitions[CORSHeaders, generateCORSHTTPResponse];
-			cTask = ParallelSubmit[{req, x},
-				If[req["Method"] === "OPTIONS",
-					(* Handle OPTIONS request *)
-					HTTPResponse[
-						"",
-						<|"Headers" -> CORSHeaders|>
-					],
-					(* Handle actual request *)
-					generateCORSHTTPResponse[x, req]
-				]
-			];
-			(* Update message queue *)
-			responseQueue["Push", {client , cTask}];
-			(* HTTPResponseSent handler *)
-			(* Lookup[handlers, "HTTPResponseSent", Identity][
-				<|
-					data,
-					<|"HTTPRequest" -> req, "HTTPResponse" -> res|>
-				|>
-			]; *)
-		]
-	]
-];
 
 
 (* -------------------------------------------------------------------------- *)
@@ -69,41 +15,45 @@ handleClient[
 submitQueueEvaluationScheduledTask[
 	responseQueue_DataStructure,
 	evalFreq_Quantity
-] := SessionSubmit @ ScheduledTask[
-	(* Initiate parallel queue evaluation *)
-	Parallel`Developer`QueueRun[];
-	(* Handle top message in the queue *)
-	If[responseQueue["Length"] > 0,
-		Block[{client, resp,
-				queueItem = Quiet[responseQueue["Pop"]]
-			},
-			client = First[queueItem, $Failed];
-			resp = Last[queueItem, <||>];
-			If[resp["State"] =!= "received",
-				(* If task not finished, push to back of queue *)
-				responseQueue["Push", queueItem]
-			,(* Else *)
-				ZeroMQLink`SocketWriteMessage[
-					client,
-					ExportByteArray[ReleaseHold[resp["Result"]], "HTTPResponse"]
-				];
-				Close @ client;
+] :=
+	SessionSubmit @ ScheduledTask[
+		(* Initiate parallel queue evaluation *)
+		Parallel`Developer`QueueRun[];
+		(* Handle top message in the queue *)
+		If[responseQueue["Length"] > 0,
+			Block[{client, resp,
+					queueItem = Quiet[responseQueue["Pop"]]
+				},
+				client = First[queueItem, $Failed];
+				resp = Last[queueItem, <||>];
+				If[resp["State"] =!= "received",
+					(* If task not finished, push to back of queue *)
+					responseQueue["Push", queueItem]
+				,(* Else *)
+					ZeroMQLink`SocketWriteMessage[
+						client,
+						ExportByteArray[ReleaseHold[resp["Result"]], "HTTPResponse"]
+					];
+					(* HTTPResponseSent handler *)
+					(* Lookup[handlers, "HTTPResponseSent", Identity][
+						<|
+							data,(* TODO: Figure out what to do with this data *)
+							<|"HTTPRequest" -> req, "HTTPResponse" -> res|>
+						|>
+					]; *)
+					Close @ client;
+				]
+
 			]
-
-		]
-	],
-	evalFreq
-]
-
-
+		],
+		evalFreq
+	]
 (* -------------------------------------------------------------------------- *)
 (* ::Section:: *)(* LocalDeployments *)
 (* Description:  Returns a list of all active local deployments.
  * Return:       {___LocalDeploymentObject}
  *)
 LocalDeployments[] := $localDeployments["Values"];
-
-
 (* -------------------------------------------------------------------------- *)
 (* ::Section:: *)(* LocalDeploy *)
 (* Description:  LocalDeploy is a function that deploys a local async HTTP server
@@ -217,5 +167,7 @@ LocalDeploy[expr_, port: portP : Automatic, OptionsPattern[]] := Module[{
 	]
 ];
 
+
+(* ::Section:: *)(* End *)
 End[];
 EndPackage[];

@@ -5,8 +5,10 @@ BeginPackage["TonyAristeidou`LocalDeploy`", {
 
 SetUsage[
 	LocalDeploy,
-	"LocalDeploy[ expr$ ] deploys a socket listener on an available local which can take request and return a LocalDeploymentObject.
-LocalDeploy[ api$, port$ ] deploys a socket listener on port$ which can take request and return a LocalDeploymentObject."
+	"LocalDeploy[ expr$ ] deploys a socket listener on an available local "<>
+		"which can take request and return a LocalDeploymentObject. \n"<>
+	"LocalDeploy[ api$, port$ ] deploys a socket listener on port$ which "<>
+		"can take request and return a LocalDeploymentObject."
 ];
 
 SetUsage[
