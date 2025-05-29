@@ -32,22 +32,22 @@ Begin["`Private`"];
 
 (* ::Subsection:: *)(* LocalDeploymentObject *)
 
-	(* ::Subsubsection:: *)(* Patterns *)
-	localDeploymentQ := ({asc} |-> AllTrue[keys, KeyExistsQ[asc, #]&]);
+(* ::Subsubsection:: *)(* Patterns *)
+localDeploymentQ := ({asc} |-> AllTrue[keys, KeyExistsQ[asc, #]&]);
 
-	(* ::Subsubsection:: *)(* Utilities *)
-	keys = {
-		"Listener",
-		"Socket",
-		"LocalIPAddress",
-		"Port",
-		"BaseURL",
-		"Endpoints",
-		"QueueTask",
-		"MessageQueue"
-	};
-	$icon = Graphics[
-		Graphics[GeometricTransformation[{Thickness[0.], FilledCurve[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, {CompressedData["
+(* ::Subsubsection:: *)(* Utilities *)
+keys = {
+	"Listener",
+	"Socket",
+	"LocalIPAddress",
+	"Port",
+	"BaseURL",
+	"Endpoints",
+	"QueueTask",
+	"MessageQueue"
+};
+$icon = Graphics[
+	Graphics[GeometricTransformation[{Thickness[0.], FilledCurve[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, {CompressedData["
 1:eJyFlDFLAzEUx0M/gC4dSkE4WxE6tKBnr9XKcbNOraMdSmknByfB8WY3F6Wd
 ih/Az+Ds6upwOAmdu4qXl/xzL+mFBo7HP/fy8t4vLzmc3o/mFSHEMP+kVeMi
 UTaSdnV6fS5t8KP0pL7s0//bMNJ+pNP1M+mPze+ZtNnwMST/cKridGYnln7r
@@ -58,243 +58,244 @@ gbpMnbpucAAXHzdwhT+4Ix7Oxeynzw354FxZvr4+8PWN1VfoO7a+tE9L+tjX
 9xQf3HBvTD/gXhX9QhrccC8NN889Bjf4s3623gnsB24mn4KT9e4YHgW32PGL
 nbrjHfPWOsRlftt5/APV7MIf
 "], {{26., 4.}, {27.104570388793945`, 4.}, {28., 4.895430564880371}, {28., 6.}, {28., 7.104569435119629}, {27.104570388793945`, 8.}, {26., 8.}, {24.895429611206055`, 8.}, {24., 7.104569435119629}, {24., 6.}, {24., 4.895430564880371}, {24.895429611206055`, 4.}, {26., 4.}}, {{4., 6.}, {4., 4.895430564880371}, {4.895430564880371, 4.}, {6., 4.}, {7.104569435119629, 4.}, {8., 4.895430564880371}, {8., 6.}, {8., 7.104569435119629}, {7.104569435119629, 8.}, {6., 8.}, {4.895430564880371, 8.}, {4., 7.104569435119629}, {4., 6.}}, {{6., 28.}, {4.895430564880371, 28.}, {4., 27.104570388793945`}, {4., 26.}, {4., 24.895429611206055`}, {4.895430564880371, 24.}, {6., 24.}, {7.104569435119629, 24.}, {8., 24.895429611206055`}, {8., 26.}, {8., 27.104570388793945`}, {7.104569435119629, 28.}, {6., 28.}}, {{16., 20.}, {13.790861129760742`, 20.}, {12., 18.209138870239258`}, {12., 16.}, {12., 13.790861129760742`}, {13.790861129760742`, 12.}, {16., 12.}, {18.209138870239258`, 12.}, {20., 13.790861129760742`}, {20., 16.}, {20., 18.209138870239258`}, {18.209138870239258`, 20.}, {16., 20.}}, {{26., 28.}, {24.895429611206055`, 28.}, {24., 27.104570388793945`}, {24., 26.}, {24., 24.895429611206055`}, {24.895429611206055`, 24.}, {26., 24.}, {27.104570388793945`, 24.}, {28., 24.895429611206055`}, {28., 26.}, {28., 27.104570388793945`}, {27.104570388793945`, 28.}, {26., 28.}}}]}, {{{1, 0}, {0, -1}}, {0, 0}}], AspectRatio -> Automatic, ImageSize -> {32., 32.}, PlotRange -> {{0., 32.}, {0., -32.}}],
-		ImageSize -> Dynamic[{
-			Automatic,
-			3.5 * CurrentValue["FontCapHeight"] / AbsoluteCurrentValue[Magnification]
-		}]
-	];
+	ImageSize -> Dynamic[{
+		Automatic,
+		3.5 * CurrentValue["FontCapHeight"] / AbsoluteCurrentValue[Magnification]
+	}]
+];
 
-	(* ::Subsubsection:: *)(* Main *)
-	LocalDeploymentObject /: MakeBoxes[
-		(*
-			For some reason localDeploymentP breaks this definition so i hardcoded the pattern.
-			TODO: fix this
-		*)
-		obj:( LocalDeploymentObject[asc: _Association?localDeploymentQ]),
-		form: (StandardForm | TraditionalForm )
-	] :=
-		Module[{above, below},
-			above = {
-				{BoxForm`SummaryItem[{"Local IP Address: ", asc["LocalIPAddress"]}]},
-				{BoxForm`SummaryItem[{"Local Port: ",       asc["Port"]}]}
-			};
-			below = {
-				BoxForm`SummaryItem[{"Socket: ",        asc["Socket"]}],
-				BoxForm`SummaryItem[{"Listener: ",      asc["Listener"]}],
-				BoxForm`SummaryItem[{"Endpoints: ",     asc["Endpoints"]}],
-				BoxForm`SummaryItem[{"Message Queue: ", asc["MessageQueue"]}]
-			};
+(* ::Subsubsection:: *)(* Main *)
+LocalDeploymentObject /: MakeBoxes[
+	(*
+		For some reason localDeploymentP breaks this definition so i hardcoded the pattern.
+		TODO: fix this
+	*)
+	obj:( LocalDeploymentObject[asc: _Association?localDeploymentQ]),
+	form: (StandardForm | TraditionalForm )
+] :=
+	Module[{above, below},
+		above = {
+			{BoxForm`SummaryItem[{"Local IP Address: ", asc["LocalIPAddress"]}]},
+			{BoxForm`SummaryItem[{"Local Port: ",       asc["Port"]}]}
+		};
+		below = {
+			BoxForm`SummaryItem[{"Socket: ",        asc["Socket"]}],
+			BoxForm`SummaryItem[{"Listener: ",      asc["Listener"]}],
+			BoxForm`SummaryItem[{"Endpoints: ",     asc["Endpoints"]}],
+			BoxForm`SummaryItem[{"Message Queue: ", asc["MessageQueue"]}]
+		};
 
-			BoxForm`ArrangeSummaryBox[
-				LocalDeploymentObject, (* head *)
-				obj,      (* interpretation *)
-				$icon,
-				above,    (* always shown content *)
-				below,    (* expandable content *)
-				form,
-				"Interpretable" -> Automatic
-			]
-		];
-	LocalDeploymentObject /: (Close|DeleteObject)[
-		dep:LocalDeploymentObject[assoc : _Association?localDeploymentQ]
-	] := (
-		Quiet @ TaskRemove[assoc["QueueTask"]];
-		Close[assoc["Socket"]]
-	);
-
-	LocalDeploymentObject[asc: _Association?localDeploymentQ][prop_] :=
-		Lookup[asc, prop];
-	LocalDeploymentObject[asc: _Association?localDeploymentQ]["Properties"] :=
-		keys
-
-	LocalDeploymentObject /:(
-		URLExecute[
-			LocalDeploymentObject[asc: _Association?localDeploymentQ],
-			 rest___
+		BoxForm`ArrangeSummaryBox[
+			LocalDeploymentObject, (* head *)
+			obj,      (* interpretation *)
+			$icon,
+			above,    (* always shown content *)
+			below,    (* expandable content *)
+			form,
+			"Interpretable" -> Automatic
 		]
-	):=(
-		URLExecute[asc["BaseURL"], rest]
-	);
+	];
+LocalDeploymentObject /: (Close|DeleteObject)[
+	dep:LocalDeploymentObject[assoc : _Association?localDeploymentQ]
+] := (
+	Quiet @ TaskRemove[assoc["QueueTask"]];
+	Close[assoc["Socket"]]
+);
 
-	LocalDeploymentObject /: Normal[obj:LocalDeploymentObject[asc: _Association?localDeploymentQ]]:=asc;
+LocalDeploymentObject[asc: _Association?localDeploymentQ][prop_] :=
+	Lookup[asc, prop];
+LocalDeploymentObject[asc: _Association?localDeploymentQ]["Properties"] :=
+	keys
+
+LocalDeploymentObject /:(
+	URLExecute[
+		LocalDeploymentObject[asc: _Association?localDeploymentQ],
+			rest___
+	]
+):=(
+	URLExecute[asc["BaseURL"], rest]
+);
+
+LocalDeploymentObject /: Normal[obj:LocalDeploymentObject[asc: _Association?localDeploymentQ]]:=asc;
 
 (* ::Subsection:: *)(* LocalDeploy *)
-	(* ::Subsubsection:: *)(* Patterns *)
-	portP = _?NumericQ|Automatic;
+(* ::Subsubsection:: *)(* Patterns *)
+portP = _?NumericQ|Automatic;
 
-	(* ::Subsubsection:: *)(* Utilities *)
-	CORSHeaders = <|
-		"Access-Control-Allow-Origin"->"*",
-		"Access-Control-Allow-Methods"->"GET, POST, OPTIONS",
-		"Access-Control-Allow-Headers"->"Origin, Content-Type, Accept"
-	|>;
+(* ::Subsubsection:: *)(* Utilities *)
+CORSHeaders = <|
+	"Access-Control-Allow-Origin"->"*",
+	"Access-Control-Allow-Methods"->"GET, POST, OPTIONS",
+	"Access-Control-Allow-Headers"->"Origin, Content-Type, Accept"
+|>;
 
-	generateCORSHTTPResponse[expr_,req_] := Module[{
-			response = GenerateHTTPResponse[expr, req]
-		},
-		HTTPResponse[
-			response["Body"],
-			<|
-				"Headers" -> <|
-					<|response["Headers"]|>,
-					CORSHeaders
-				|>
+generateCORSHTTPResponse[expr_,req_] := Module[{
+		response = GenerateHTTPResponse[expr, req]
+	},
+	HTTPResponse[
+		response["Body"],
+		<|
+			"Headers" -> <|
+				<|response["Headers"]|>,
+				CORSHeaders
 			|>
-		]
-	];
+		|>
+	]
+];
 
-	(* ::Subsubsection:: *)(* Main *)
-	Options[LocalDeploy] = {
-		(* OverwriteTarget -> True, *) (* TODO *)
-		"BaseURL" -> "127.0.0.1",
-		HandlerFunctions -> <||>
-	};
-	LocalDeploy[e_, port: portP : Automatic, OptionsPattern[]] := Module[{
-			listener,server,url,endpoints,localObj, enclose, task, cTask,
-			(*
-				DataStructure seems to be finicky to distribute to parallel kernels.
-				Using simple list for now
-			*)
-			messageQueue = {},
-			base = OptionValue["BaseURL"],
-			handlers = OptionValue[HandlerFunctions],
-			expr = e
-		},
-		(*
-		serverLink = LinkCreate[
-			serverUuid = CreateUUID["local_deploy_"],
-			LinkProtocol-> "IntraProcess"
+removeSocketIfBound[base_String, port_Integer] := Quiet[
+	Close @ SelectFirst[
+		Sockets[],
+		(
+			#["DestinationPort"] === port &&
+			#["DestinationHostname"] === base
+		) &
+	],
+	{Close::stream}
+];
+
+(* ::Subsubsection:: *)(* Main *)
+Options[LocalDeploy] = {
+	OverwriteTarget -> True,
+	"BaseURL" -> "127.0.0.1",
+	"EvaluationFrequency" -> Quantity[50, "Milliseconds"],
+	HandlerFunctions -> <||>
+};
+LocalDeploy[e_, port: portP : Automatic, OptionsPattern[]] := Module[{
+		listener,server,url,endpoints,localObj, enclose, task, cTask,
+		messageQueue = CreateDataStructure["Queue"],
+		base = OptionValue["BaseURL"],
+		handlers = OptionValue[HandlerFunctions],
+		expr = e
+	},
+	enclose = Enclose[
+		(* Remove socket bound to 'port' if it exists *)
+		If[OptionValue[OverwriteTarget] && port =!= Automatic,
+			removeSocketIfBound[base, port]
 		];
-		*)
-		enclose = Enclose[
-			(* Create listener socket *)
-			listener =
-				ConfirmMatch[#, SocketListener[__]]& @
-				SocketListen[
-					(* Open server socket *)
-					server = SocketOpen[{base, port}, "TCP"]
-					,
-					(* Listener function on client connection *)
-					Function[{data},
-						Module[{req,
-								client = data["SourceSocket"],
-								dataBa = data["DataByteArray"]
-							},
-							Enclose[
-								(* Import HTTPRequest *)
-								req = ImportByteArray[dataBa, "HTTPRequest"];
-								(* HTTPResponseReceived handler *)
-								Lookup[handlers, "HTTPRequestReceived", Identity][
-									<|
-										data,
-										<|
-											"HTTPRequest" -> req,
-											"HTTPResponse" -> Missing[]
-										|>
-									|>
-								];
-								(* Start the HTTPResponse task *)
-								DistributeDefinitions[
-									CORSHeaders,
-									generateCORSHTTPResponse
-								];
-								(* SetSharedVariable[req, expr]; *)
-								cTask = ParallelSubmit[{req, expr},
-									If[req["Method"] === "OPTIONS",
-										(* Handle OPTIONS request *)
-										HTTPResponse[
-											"",
-											<|"Headers" -> CORSHeaders|>
-										],
-										(* Handle actual request *)
-										generateCORSHTTPResponse[expr, req]
-									]
-								];
-								(* Update message queue *)
-								AppendTo[messageQueue, {client , cTask}];
-								(* HTTPResponseSent handler *)
-								(* Lookup[handlers, "HTTPResponseSent", Identity][
-									<|
-										data,
-										<|"HTTPRequest" -> req, "HTTPResponse" -> res|>
-									|>
-								]; *)
-							]
-						]
-					]
-				];
 
-			(* Deploy queue evaluation task *)
-			task = SessionSubmit[ScheduledTask[
-				Parallel`Developer`QueueRun[];
-				Module[{
-						receivedQueue = Select[messageQueue,
-							#[[2]]["State"]==="received"&
-						]
-					},
-					messageQueue = Select[messageQueue,
-						#[[2]]["State"] =!= "received"&
-					];
-					Do[
-						With[{
-								client = receivedQueue[[1, 1]],
-								resp = WaitAll[receivedQueue[[1, 2]]]
-							},
-							(* Write response to client socket *)
-							ZeroMQLink`SocketWriteMessage[client,
-								ExportByteArray[resp, "HTTPResponse"]
+		(* Create listener socket *)
+		listener =
+			ConfirmMatch[#, _SocketListener]& @
+			SocketListen[
+				(* Open server socket *)
+				server = SocketOpen[{base, port}, "TCP"]
+				,
+				(* Listener function on client connection *)
+				Function[{data},
+					Block[{req,
+							client = data["SourceSocket"],
+							dataBa = data["DataByteArray"]
+						},
+						Enclose[
+							(* Import HTTPRequest *)
+							req = ImportByteArray[dataBa, "HTTPRequest"];
+							(* HTTPResponseReceived handler *)
+							Lookup[handlers, "HTTPRequestReceived", Identity][
+								<|
+									data,
+									<|
+										"HTTPRequest" -> req,
+										"HTTPResponse" -> Missing[]
+									|>
+								|>
 							];
-							(* Close client socket *)
-							Close[client];
-						],
-						Length @ receivedQueue
+							(* Start the HTTPResponse task *)
+							DistributeDefinitions[CORSHeaders, generateCORSHTTPResponse];
+							cTask = ParallelSubmit[{req, expr},
+								If[req["Method"] === "OPTIONS",
+									(* Handle OPTIONS request *)
+									HTTPResponse[
+										"",
+										<|"Headers" -> CORSHeaders|>
+									],
+									(* Handle actual request *)
+									generateCORSHTTPResponse[expr, req]
+								]
+							];
+							(* Update message queue *)
+							messageQueue["Push", {client , cTask}];
+							(* HTTPResponseSent handler *)
+							(* Lookup[handlers, "HTTPResponseSent", Identity][
+								<|
+									data,
+									<|"HTTPRequest" -> req, "HTTPResponse" -> res|>
+								|>
+							]; *)
+						]
 					]
-				],
-				Quantity[100, "Milliseconds"]
-			]];
-
-			(* Build base URL *)
-			url = URLBuild[
-				<|
-					"Scheme" -> "http",
-					"Domain" -> server["DestinationHostname"],
-					"Port" 	 -> server["DestinationPort"]
-				|>
+				]
 			];
-			(*
-				Extract endpoints and Iconize their expressions for display in
-				the LocalDeploymentObject
-			*)
-			endpoints = <|
-				#[[0]][ #[[1]], Evaluate[Iconize[ #[[2]] ] ]]& /@
-					If[MatchQ[expr, _URLDispatcher],
-						First[expr],
-						{"/" :> expr}
+
+		(* Deploy queue evaluation loop task *)
+		task = SessionSubmit[ScheduledTask[
+			(* Initiate parallel queue evaluation *)
+			Parallel`Developer`QueueRun[];
+			(* Handle top message in the queue *)
+			If[messageQueue["Length"] > 0,
+				Block[{client, resp,
+						queueItem = Quiet[messageQueue["Pop"]]
+					},
+					client = First[queueItem, $Failed];
+					resp = Last[queueItem, <||>];
+					If[resp["State"] =!= "received",
+						(* If task yet finished, push to back of queue *)
+						messageQueue["Push", queueItem]
+					,(* Else *)
+						ZeroMQLink`SocketWriteMessage[
+							client,
+							ExportByteArray[ReleaseHold[resp["Result"]], "HTTPResponse"]
+						];
+						Close @ client;
 					]
-			|>;
 
-			(* Return *)
-			localObj = LocalDeploymentObject[
-				<|
-					"Listener"       -> listener,
-					"Socket"         -> server,
-					"LocalIPAddress" -> server["DestinationHostname"],
-					"Port"           -> server["DestinationPort"],
-					"BaseURL"        -> url,
-					"Endpoints"      -> endpoints,
-					"QueueTask"      -> task,
-					"MessageQueue"   -> messageQueue
-				|>
-			];
-			localObj
+				]
+			],
+			OptionValue["EvaluationFrequency"]
+		]];
+
+		(* Build base URL *)
+		url = URLBuild[
+			<|
+				"Scheme" -> "http",
+				"Domain" -> server["DestinationHostname"],
+				"Port" 	 -> server["DestinationPort"]
+			|>
 		];
+		(*
+			Extract endpoints and Iconize their expressions for display in
+			the LocalDeploymentObject
+		*)
+		endpoints = <|
+			#[[0]][ #[[1]], Evaluate[Iconize[ #[[2]] ] ]]& /@
+				If[MatchQ[expr, _URLDispatcher],
+					First[expr],
+					{"/" :> expr}
+				]
+		|>;
 
-		If[!FailureQ[enclose],
-			enclose,
-			enclose["Expression"]
-		]
-
+		(* Return *)
+		localObj = LocalDeploymentObject[
+			<|
+				"Listener"       -> listener,
+				"Socket"         -> server,
+				"LocalIPAddress" -> server["DestinationHostname"],
+				"Port"           -> server["DestinationPort"],
+				"BaseURL"        -> url,
+				"Endpoints"      -> endpoints,
+				"QueueTask"      -> task,
+				"MessageQueue"   -> messageQueue
+			|>
+		];
+		localObj
 	];
+
+	If[!FailureQ[enclose],
+		enclose,
+		enclose["Expression"]
+	]
+
+];
 
 
 End[];
