@@ -140,8 +140,8 @@ LocalDeploy[expr_, port: portP : Automatic, OptionsPattern[]] := Module[{
 				<|
 					"Listener"    -> listener,
 					"Socket"      -> server,
-					"HostAddress" -> server["DestinationHostname"],
-					"HostPort"    -> server["DestinationPort"],
+					"HostAddress" -> base,
+					"HostPort"    -> port,
 					"URL"         -> url,
 					"Endpoints"   -> endpoints,
 					"EvaluationQueueTask" -> task,
