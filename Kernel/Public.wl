@@ -20,9 +20,9 @@ SetUsage[
 		"| --- | --- |",
 		"| \"Listener\" | Returns the deployment's SocketListener. |",
 		"| \"Socket\" | Returns the server SocketObject. |",
-		"| \"Hostname\" | Returns the IPAdress of the deployment. |",
-		"| \"Port\" | Returns the port the deployment is listening on. |",
-		"| \"BaseURL\" | Returns the url required for an HTTP request to the deployment. |",
+		"| \"HostAddress\" | Returns the IPAdress of the deployment. |",
+		"| \"HostPort\" | Returns the port the deployment is listening on. |",
+		"| \"URL\" | Returns the url required for an HTTP request to the deployment. |",
 		"| \"Endpoints\" | Returns an association of all endpoints deployed and their Iconized expressions |",
 		"The deployment can be closed using Close[ $localDeployment ] or DeleteObject[ $localDeployment ]"
 	}, "\n"]

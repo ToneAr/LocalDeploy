@@ -18,9 +18,9 @@ Begin["`FileScope`Objects`Private`"];
 keys = {
 	"Listener",
 	"Socket",
-	"Hostname",
-	"Port",
-	"BaseURL",
+	"HostAddress",
+	"HostPort",
+	"URL",
 	"Endpoints",
 	"EvaluationQueueTask",
 	"ResponseQueue"
@@ -38,8 +38,8 @@ LocalDeploymentObject /: MakeBoxes[
 ] :=
 	Module[{above, below},
 		above = {
-			{BoxForm`SummaryItem[{"Hostname: ", asc["Hostname"]}]},
-			{BoxForm`SummaryItem[{"Port: ",     asc["Port"]}]}
+			{BoxForm`SummaryItem[{"Host Address: ", asc["HostAddress"]}]},
+			{BoxForm`SummaryItem[{"Host Port: ",    asc["HostPort"]}]}
 		};
 		below = {
 			BoxForm`SummaryItem[{"Socket: ",        asc["Socket"]}],
@@ -69,8 +69,8 @@ LocalDeploymentObject /: MakeBoxes[
 LocalDeploymentObject /: (Close|DeleteObject)[
 	dep:LocalDeploymentObject[assoc : _Association?localDeploymentQ]
 ] := (
-	$localDeployments["KeyDrop", {assoc["Hostname"], assoc["Port"]}];
-	Quiet @ TaskRemove[assoc["QueueTask"]];
+	$localDeployments["KeyDrop", {assoc["HostAddress"], assoc["HostPort"]}];
+	Quiet @ TaskRemove[assoc["EvaluationQueueTask"]];
 	Close @ assoc["Socket"]
 );
 
@@ -99,7 +99,7 @@ LocalDeploymentObject /: (
 			rest___
 	]
 ) := (
-	URLExecute[asc["BaseURL"], rest]
+	URLExecute[asc["URL"], rest]
 );
 
 

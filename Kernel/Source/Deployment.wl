@@ -61,7 +61,7 @@ LocalDeployments[] := $localDeployments["Values"];
  *)
 LocalDeploy // Options = {
 	OverwriteTarget       -> True,
-	"HostAddress"         -> "127.0.0.1",
+	"HostAddress"         -> "localhost",
 	"EvaluationFrequency" -> Quantity[50, "Milliseconds"],
 	HandlerFunctions      -> <||>,
 	"LaunchKernels"       -> True,
@@ -141,8 +141,8 @@ LocalDeploy[expr_, port: portP : Automatic, OptionsPattern[]] := Module[{
 					"Listener"    -> listener,
 					"Socket"      -> server,
 					"HostAddress" -> server["DestinationHostname"],
-					"Port"        -> server["DestinationPort"],
-					"BaseURL"     -> url,
+					"HostPort"    -> server["DestinationPort"],
+					"URL"         -> url,
 					"Endpoints"   -> endpoints,
 					"EvaluationQueueTask" -> task,
 					"ResponseQueue"       -> responseQueue
