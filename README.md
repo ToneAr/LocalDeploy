@@ -1,12 +1,12 @@
 # resource-function-LOCAL-DEPLOY
 
 ## Description
-A set of functions allowing the local deployment of active elements like APIs using SocketLink.
+A set of functions allowing the local deployment of active element HTTP servers.
 
 ## Usage
 | Usage | Description |
-| - | - |
-| `LocalDeployment[<\|...\|>]` | Object representing a local deployment |
-| `LocalDeploy[api]` | Deploys the api on any available port |
-| `LocalDeploy[api, port]` | Deploys the api on port |
-| `WIP` | WIP |
+| ----- | ----- |
+| `LocalDeploy[expr]` | Deploys the expr on any available port |
+| `LocalDeploy[expr, port]` | Deploys the expr on port |
+| `LocalDeployment[assoc]` | Object representing a local deployment |
+| `LocalDeployments[]` | Returns a list of all active LocalDeploymentObject's |

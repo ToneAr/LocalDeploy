@@ -1,7 +1,7 @@
 (* ::Section:: *)(* Dependencies & Context *)
-BeginPackage["TonyAristeidou`LocalDeploy`", {
-	"TonyAristeidou`LocalDeploy`",
-	"TonyAristeidou`LocalDeploy`Private`"
+BeginPackage["ToneAr`LocalDeploy`", {
+	"ToneAr`LocalDeploy`",
+	"ToneAr`LocalDeploy`Private`"
 }];
 
 Begin["`FileScope`HTTP`Private`"];
@@ -49,7 +49,7 @@ handleClient[
 				]
 			];
 			(* Update message queue *)
-			responseQueue["Push", {client , cTask}];
+			responseQueue["Push", {data , cTask}];
 		]
 	]
 ];

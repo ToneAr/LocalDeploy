@@ -1,6 +1,6 @@
 Enclose[
-	(Confirm @* Get @* Function["TonyAristeidou`LocalDeploy`"<>#]) /@ {
-		(* Relative context to TonyAristeidou`LocalDeploy` *)
+	(Confirm @* Get @* Function["ToneAr`LocalDeploy`"<>#]) /@ {
+		(* Relative context to ToneAr`LocalDeploy` *)
 		"Public`",
 		"Private`",
 		"Source`Common`",

@@ -1,7 +1,7 @@
 (* ::Section:: *)(* Dependencies & Context *)
-BeginPackage["TonyAristeidou`LocalDeploy`", {
-	"TonyAristeidou`LocalDeploy`",
-	"TonyAristeidou`LocalDeploy`Private`"
+BeginPackage["ToneAr`LocalDeploy`", {
+	"ToneAr`LocalDeploy`",
+	"ToneAr`LocalDeploy`Private`"
 }];
 
 Begin["`FileScope`Common`Private`"];
@@ -23,7 +23,7 @@ $localDeployments = Replace[$localDeployments,
  * Return:       _Graphics
  *)
 $icon = Import[
-	PacletObject["TonyAristeidou/LocalDeploy"]["AssetLocation", "icon.svg"],
+	PacletObject["ToneAr/LocalDeploy"]["AssetLocation", "icon.svg"],
 	"Graphics"
 ];
 

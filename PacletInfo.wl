@@ -1,22 +1,20 @@
-(* ::Package:: *)
-
 PacletObject[
 	<|
-		"Name" -> "TonyAristeidou/LocalDeploy",
+		"Name" -> "ToneAr/LocalDeploy",
 		"Description" -> "Locally deploy async HTTP server able to emulate the Wolfram Cloud",
 		"Creator" -> "Antonis Aristeidou",
 		"License" -> "MIT",
-		"PublisherID" -> "TonyAristeidou",
+		"PublisherID" -> "ToneAr",
 		"Version" -> "2.0.0",
 		"WolframVersion" -> "12.2+",
-		"PrimaryContext" -> "TonyAristeidou`LocalDeploy`",
+		"PrimaryContext" -> "ToneAr`LocalDeploy`",
 		"Extensions" -> {
 		{"Kernel",
 			"Root" -> "Kernel",
-			"Context" -> "TonyAristeidou`LocalDeploy`",
+			"Context" -> "ToneAr`LocalDeploy`",
 			"Symbols" -> {
-				"TonyAristeidou`LocalDeploy`LocalDeploy",
-				"TonyAristeidou`LocalDeploy`LocalDeploymentObject"
+				"ToneAr`LocalDeploy`LocalDeploy",
+				"ToneAr`LocalDeploy`LocalDeploymentObject"
 			}
 		},
 		{"Asset",

@@ -1,7 +1,7 @@
 (* ::Section:: *)(* Dependencies & Context *)
-BeginPackage["TonyAristeidou`LocalDeploy`", {
-	"TonyAristeidou`LocalDeploy`",
-	"TonyAristeidou`LocalDeploy`Private`"
+BeginPackage["ToneAr`LocalDeploy`", {
+	"ToneAr`LocalDeploy`",
+	"ToneAr`LocalDeploy`Private`"
 }];
 
 Begin["`FileScope`Deploy`Private`"];
@@ -14,33 +14,43 @@ Begin["`FileScope`Deploy`Private`"];
  *)
 submitQueueEvaluationScheduledTask[
 	responseQueue_DataStructure,
-	evalFreq_Quantity
+	evalFreq_Quantity,
+	handlers_Association
 ] :=
 	SessionSubmit @ ScheduledTask[
 		(* Initiate parallel queue evaluation *)
 		Parallel`Developer`QueueRun[];
 		(* Handle top message in the queue *)
 		If[responseQueue["Length"] > 0,
-			Block[{client, resp,
+			Block[{client, resp, data,
 					queueItem = Quiet[responseQueue["Pop"]]
 				},
-				client = First[queueItem, $Failed];
+				data = First[queueItem, $Failed];
+				client = data["SourceSocket"];
 				resp = Last[queueItem, <||>];
 				If[resp["State"] =!= "received",
 					(* If task not finished, push to back of queue *)
 					responseQueue["Push", queueItem]
 				,(* Else *)
+					(* Send HTTPResponse to client *)
+					resp = ReleaseHold[resp["Result"]];
 					ZeroMQLink`SocketWriteMessage[
 						client,
-						ExportByteArray[ReleaseHold[resp["Result"]], "HTTPResponse"]
+						ExportByteArray[resp, "HTTPResponse"]
 					];
 					(* HTTPResponseSent handler *)
-					(* Lookup[handlers, "HTTPResponseSent", Identity][
+					Lookup[handlers, "HTTPResponseSent", Identity][
 						<|
-							data,(* TODO: Figure out what to do with this data *)
-							<|"HTTPRequest" -> req, "HTTPResponse" -> res|>
+							data,
+							<|
+								"HTTPRequest" -> ImportByteArray[
+									data["DataByteArray"],
+									"HTTPRequest"
+								];,
+								"HTTPResponse" -> resp
+							|>
 						|>
-					]; *)
+					];
 					Close @ client;
 				]
 
@@ -62,7 +72,7 @@ LocalDeployments[] := $localDeployments["Values"];
 LocalDeploy // Options = {
 	OverwriteTarget       -> True,
 	"HostAddress"         -> "localhost",
-	"EvaluationFrequency" -> Quantity[50, "Milliseconds"],
+	"EvaluationInterval" -> Quantity[50, "Milliseconds"],
 	HandlerFunctions      -> <||>,
 	"LaunchKernels"       -> True,
 	"InitialKernelCount"  -> Min[$ProcessorCount * 2, 12]
@@ -100,7 +110,8 @@ LocalDeploy[expr_, port: portP : Automatic, OptionsPattern[]] := Module[{
 		task = ConfirmMatch[
 			submitQueueEvaluationScheduledTask[
 				responseQueue,
-				OptionValue["EvaluationFrequency"]
+				OptionValue["EvaluationInterval"],
+				handlers
 			],
 			_TaskObject,
 			"Failed to create evaluation task"
@@ -130,7 +141,7 @@ LocalDeploy[expr_, port: portP : Automatic, OptionsPattern[]] := Module[{
 					]
 			|>,
 			<|
-				Repeated[_String -> Except[_?FailureQ]]
+				Repeated[(Rule|RuleDelayed)[_String, Except[_?(FailureQ)]]]
 			|>,
 			"Failed to generate endpoints"
 		];

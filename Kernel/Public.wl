@@ -1,4 +1,4 @@
-BeginPackage["TonyAristeidou`LocalDeploy`", {
+BeginPackage["ToneAr`LocalDeploy`", {
 	"GeneralUtilities`"
 }];
 

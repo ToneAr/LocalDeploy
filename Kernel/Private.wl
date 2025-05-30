@@ -1,4 +1,4 @@
-BeginPackage["TonyAristeidou`LocalDeploy`Private`"];
+BeginPackage["ToneAr`LocalDeploy`Private`"];
 
 $localDeployments::usage =
 	"$localDeployments is a hash table that stores "<>

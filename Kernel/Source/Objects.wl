@@ -1,7 +1,7 @@
 (* ::Section:: *)(* Dependencies & Context *)
-BeginPackage["TonyAristeidou`LocalDeploy`", {
-	"TonyAristeidou`LocalDeploy`",
-	"TonyAristeidou`LocalDeploy`Private`",
+BeginPackage["ToneAr`LocalDeploy`", {
+	"ToneAr`LocalDeploy`",
+	"ToneAr`LocalDeploy`Private`",
 
 	"GeneralUtilities`",
 	"ZeroMQLink`",
@@ -96,12 +96,20 @@ LocalDeploymentObject[_Association?localDeploymentQ]["Properties"] := keys;
 LocalDeploymentObject /: (
 	URLExecute[
 		LocalDeploymentObject[asc: _Association?localDeploymentQ],
-			rest___
+		rest___
 	]
 ) := (
 	URLExecute[asc["URL"], rest]
 );
-
+LocalDeploymentObject /: (
+	URLExecute[
+		LocalDeploymentObject[asc: _Association?localDeploymentQ],
+		endpoint_String,
+		rest___
+	]
+) := (
+	URLExecute[URLBuild[{asc["URL"], endpoint}], rest]
+);
 
 (* -------------------------------------------------------------------------- *)
 (* ::Section:: *)(* Up-Value: Normal *)
@@ -111,6 +119,7 @@ LocalDeploymentObject /: (
 LocalDeploymentObject /: Normal[
 	LocalDeploymentObject[asc: _Association?localDeploymentQ]
 ] := asc;
+
 
 (* ::Section:: *)(* End *)
 End[];
