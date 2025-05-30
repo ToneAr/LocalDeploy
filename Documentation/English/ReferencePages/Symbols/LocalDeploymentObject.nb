@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    292885,       5749]
-NotebookOptionsPosition[    285163,       5587]
-NotebookOutlinePosition[    285961,       5613]
-CellTagsIndexPosition[    285880,       5608]
+NotebookDataLength[    295743,       5823]
+NotebookOptionsPosition[    287625,       5653]
+NotebookOutlinePosition[    288423,       5679]
+CellTagsIndexPosition[    288342,       5674]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -30,7 +30,8 @@ Cell[TextData[{
    ButtonBox["LocalDeploymentObject",
     BaseStyle->"Link",
     ButtonData->
-     "paclet:TonyAristeidou/LocalDeploy/ref/LocalDeploymentObject"], "[", 
+     "paclet:ToneAr/LocalDeploy/LocalDeploy/ref/LocalDeploymentObject"], "[", 
+   
    StyleBox["assoc", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
   "85bcd2a8-53a0-4e02-b1e7-802e881f4d9b"],
  "\[LineSeparator]A symbolic representation of a local deployment with the \
@@ -50,7 +51,7 @@ Cell[TextData[{
   ButtonBox["LocalDeploymentObject",
    BaseStyle->"Link",
    ButtonData->
-    "paclet:TonyAristeidou/LocalDeploy/ref/LocalDeploymentObject"]], 
+    "paclet:ToneAr/LocalDeploy/LocalDeploy/ref/LocalDeploymentObject"]], 
   "InlineFormula",ExpressionUUID->"bcdd7909-9fb8-43c0-a8d5-c42e22ec74d6"],
  " include:"
 }], "Notes",
@@ -118,7 +119,7 @@ Cell[TextData[{
  Cell[BoxData[
   ButtonBox["LocalDeploy",
    BaseStyle->"Link",
-   ButtonData->"paclet:TonyAristeidou/LocalDeploy/ref/LocalDeploy"]], 
+   ButtonData->"paclet:ToneAr/LocalDeploy/LocalDeploy/ref/LocalDeploy"]], 
   "InlineSeeAlsoFunction",
   TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
   "3468438f-ff3f-48cd-9acf-59057b8ff37b"],
@@ -126,8 +127,8 @@ Cell[TextData[{
  Cell[BoxData[
   ButtonBox["LocalDeployments",
    BaseStyle->"Link",
-   ButtonData->"paclet:TonyAristeidou/LocalDeploy/ref/LocalDeployments"]], 
-  "InlineSeeAlsoFunction",
+   ButtonData->"paclet:ToneAr/LocalDeploy/LocalDeploy/ref/LocalDeployments"]],
+   "InlineSeeAlsoFunction",
   TaggingRules->{"PageType" -> "Function"},
   CellTags->"ee61784a-563f-4211-8556-544642908c86",ExpressionUUID->
   "6c613ad9-e485-4304-b0be-ce8c691e87fb"],
@@ -138,10 +139,10 @@ Cell[TextData[{
     "a48f551b-3de2-4a33-b762-67b8086d992d"], 
    DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
     "f26aea83-6018-4a8f-867f-9f0a996ef651", 
-     "c3d20b20-c868-43b2-a347-a1435b3dc520"], $CellContext`cellobj$$ = 
+     "390228ed-2c68-4796-b9a0-94737b1a55bc"], $CellContext`cellobj$$ = 
     CellObject[
     "7f259ee8-7819-4c41-987a-0371c0da2e64", 
-     "feef8b91-db2b-45a7-aa8e-c79e0418b6f4"]}, 
+     "4833f370-81ef-431e-9436-80767f621cd4"]}, 
     TemplateBox[{
       GraphicsBox[{{
          Thickness[0.06], 
@@ -274,7 +275,7 @@ Cell[BoxData[
     RowBox[{"2", "+", "2"}], "]"}], " ", "]"}]}]], "Input",
  CellChangeTimes->{{3.9575841356003036`*^9, 3.957584156013962*^9}, {
   3.9575845260397577`*^9, 3.9575845265395727`*^9}},
- CellLabel->"In[42]:=",
+ CellLabel->"In[26]:=",
  CellID->54085286,ExpressionUUID->"3a368ddf-be0e-4967-a17b-b2ce306b193b"],
 
 Cell[BoxData[
@@ -530,7 +531,7 @@ LvsYN/j9zeMH81qGvw==
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["44805", "SummaryItem"]}], 
+                    TagBox["34239", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -543,7 +544,7 @@ LvsYN/j9zeMH81qGvw==
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c\"", 
+                    "\"TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041\"", 
                     "SummaryItem"]}], 
                     RowBox[{
                     TagBox[
@@ -567,7 +568,7 @@ formatConnectedClientCount[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     Lookup[
                     ZeroMQLink`PackageScope`$Sockets, 
-                    "TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c", <||>], 
+                    "TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041", <||>], 
                     "SocketID"]], {PatternTest[
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`clients, 
                     Blank[Association]], AssociationQ] :> 
@@ -669,7 +670,7 @@ formatConnectedClientCount[
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["44805", "SummaryItem"]}], 
+                    TagBox["34239", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -682,7 +683,7 @@ formatConnectedClientCount[
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c\"", 
+                    "\"TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041\"", 
                     "SummaryItem"]}], 
                     RowBox[{
                     TagBox[
@@ -706,7 +707,7 @@ formatConnectedClientCount[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     Lookup[
                     ZeroMQLink`PackageScope`$Sockets, 
-                    "TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c", <||>], 
+                    "TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041", <||>], 
                     "SocketID"]], {PatternTest[
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`clients, 
                     Blank[Association]], AssociationQ] :> 
@@ -739,7 +740,7 @@ formatConnectedClientList[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     Lookup[
                     ZeroMQLink`PackageScope`$Sockets, 
-                    "TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c", <||>], 
+                    "TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041", <||>], 
                     "SocketID"]], {PatternTest[
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`clients, 
                     Blank[Association]], AssociationQ] :> 
@@ -768,7 +769,7 @@ formatConnectedClientList[
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                    SocketObject[
-                   "TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c"], 
+                   "TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041"], 
                    Selectable -> False, Editable -> False, SelectWithContents -> 
                    True], "SummaryItem"]}]}, {
                RowBox[{
@@ -999,7 +1000,7 @@ formatConnectedClientList[
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3755080732689685463], {
+                    3755139369118483358], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -1241,7 +1242,7 @@ formatConnectedClientList[
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3755080732689685463], {
+                    3755139369118483358], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -1261,19 +1262,22 @@ formatConnectedClientList[
                     RowBox[{
                     
                     RowBox[{"{", 
-                    "TonyAristeidou`LocalDeploy`FileScope`HTTP`Private`data$",
-                     "}"}], ",", 
+                    "ToneAr`LocalDeploy`FileScope`HTTP`Private`data$", "}"}], 
+                    ",", 
                     RowBox[{"Block", "[", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{
-                    RowBox[{"\[LeftSkeleton]", "53", "\[RightSkeleton]"}], 
+                    RowBox[{"\[LeftSkeleton]", "45", "\[RightSkeleton]"}], 
                     ",", 
                     RowBox[{"\[LeftSkeleton]", "3", "\[RightSkeleton]"}], ",", 
                     RowBox[{
-                    RowBox[{"\[LeftSkeleton]", "56", "\[RightSkeleton]"}], 
+                    RowBox[{"\[LeftSkeleton]", "48", "\[RightSkeleton]"}], 
                     "=", 
-                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}]}], 
+                    RowBox[{
+                    RowBox[{"\[LeftSkeleton]", "47", "\[RightSkeleton]"}], 
+                    "[", 
+                    RowBox[{"\"D\"", "\[Ellipsis]", "\"ay\""}], "]"}]}]}], 
                     "}"}], ",", 
                     RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
                     "]"}]}], "]"}], Short], "SummaryItem"]}]}, {
@@ -1383,7 +1387,7 @@ formatConnectedClientList[
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["44805", "SummaryItem"]}], 
+                    TagBox["34239", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -1396,7 +1400,7 @@ formatConnectedClientList[
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c\"", 
+                    "\"TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
                     "Rows" -> {{Automatic}}}, AutoDelete -> False, 
@@ -1486,7 +1490,7 @@ formatConnectedClientList[
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["44805", "SummaryItem"]}], 
+                    TagBox["34239", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -1499,7 +1503,7 @@ formatConnectedClientList[
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c\"", 
+                    "\"TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
                     
                     RowBox[{
@@ -1522,7 +1526,7 @@ formatConnectedClientList[
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                     SocketObject[
-                    "TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c"], 
+                    "TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041"], 
                     Selectable -> False, Editable -> False, 
                     SelectWithContents -> True], "SummaryItem"]}]}}, 
                     GridBoxAlignment -> {
@@ -1542,7 +1546,7 @@ formatConnectedClientList[
                     BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
-                   SocketListener[3755080732689685463], Selectable -> False, 
+                   SocketListener[3755139369118483358], Selectable -> False, 
                    Editable -> False, SelectWithContents -> True], 
                   "SummaryItem"]}]}, {
                RowBox[{
@@ -1593,47 +1597,54 @@ formatConnectedClientList[
        Dynamic[Typeset`open$$], ImageSize -> Automatic]},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
-  TonyAristeidou`LocalDeploy`LocalDeploymentObject[<|
-   "Listener" -> SocketListener[3755080732689685463], "Socket" -> 
-    SocketObject["TCPSERVER-6d22c529-1600-47ae-92ef-c7a196b92d2c"], 
+  ToneAr`LocalDeploy`LocalDeploymentObject[<|
+   "Listener" -> SocketListener[3755139369118483358], "Socket" -> 
+    SocketObject["TCPSERVER-12212a6f-e497-430d-b6dd-53216906b041"], 
     "HostAddress" -> "localhost", "HostPort" -> Automatic, "URL" -> 
-    "http://127.0.0.1:44805", "Endpoints" -> <|"/" :> IconizedObject[
+    "http://127.0.0.1:34239", "Endpoints" -> <|"/" :> IconizedObject[
         Delayed[2 + 2], Automatic, Method -> Automatic]|>, 
     "EvaluationQueueTask" -> 
     TaskObject[<|
-      "TaskUUID" -> "dc8023a5-8e0a-4b77-868c-119e0de6c086", "TaskEnvironment" -> 
+      "TaskUUID" -> "488e00ec-61d5-4a8d-879f-78408bdcd269", "TaskEnvironment" -> 
        "Session", "TaskType" -> "Scheduled", "EvaluationExpression" :> 
        HoldForm[
         Parallel`Developer`QueueRun[]; 
          If[DataStructure["Queue", {"Data" -> {}}]["Length"] > 0, 
            
-           Block[{TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`client, 
-             TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`resp, 
-             TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`queueItem = 
-             Quiet[
+           Block[{ToneAr`LocalDeploy`FileScope`Deploy`Private`client, 
+             ToneAr`LocalDeploy`FileScope`Deploy`Private`resp, 
+             ToneAr`LocalDeploy`FileScope`Deploy`Private`data, 
+             ToneAr`LocalDeploy`FileScope`Deploy`Private`queueItem = Quiet[
                DataStructure["Queue", {"Data" -> {}}]["Pop"]]}, 
-            TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`client = 
-             First[TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`\
-queueItem, $Failed]; 
-            TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`resp = 
-             Last[TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`\
-queueItem, <||>]; 
-            If[TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`resp[
-               "State"] =!= "received", 
+            ToneAr`LocalDeploy`FileScope`Deploy`Private`data = 
+             First[ToneAr`LocalDeploy`FileScope`Deploy`Private`queueItem, \
+$Failed]; ToneAr`LocalDeploy`FileScope`Deploy`Private`client = 
+             ToneAr`LocalDeploy`FileScope`Deploy`Private`data["SourceSocket"]; 
+            ToneAr`LocalDeploy`FileScope`Deploy`Private`resp = 
+             Last[ToneAr`LocalDeploy`FileScope`Deploy`Private`queueItem, \
+<||>]; If[ToneAr`LocalDeploy`FileScope`Deploy`Private`resp["State"] =!= 
+              "received", 
               DataStructure["Queue", {"Data" -> {}}][
-              "Push", TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`\
-queueItem], ZeroMQLink`SocketWriteMessage[
-               TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`client, 
+              "Push", ToneAr`LocalDeploy`FileScope`Deploy`Private`queueItem], 
+              ToneAr`LocalDeploy`FileScope`Deploy`Private`resp = ReleaseHold[
+                 ToneAr`LocalDeploy`FileScope`Deploy`Private`resp["Result"]]; 
+              ZeroMQLink`SocketWriteMessage[
+               ToneAr`LocalDeploy`FileScope`Deploy`Private`client, 
                 ExportByteArray[
-                 ReleaseHold[
-                  TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`resp[
-                  "Result"]], "HTTPResponse"]]; 
-              Close[TonyAristeidou`LocalDeploy`FileScope`Deploy`Private`\
-client]; Null]]]], 
+                ToneAr`LocalDeploy`FileScope`Deploy`Private`resp, 
+                 "HTTPResponse"]]; 
+              Lookup[<||>, "HTTPResponseSent", Identity][<|
+                ToneAr`LocalDeploy`FileScope`Deploy`Private`data, <|
+                 "HTTPRequest" -> ImportByteArray[
+                    ToneAr`LocalDeploy`FileScope`Deploy`Private`data[
+                    "DataByteArray"], "HTTPRequest"]; Null, "HTTPResponse" -> 
+                  ToneAr`LocalDeploy`FileScope`Deploy`Private`resp|>|>]; 
+              Close[ToneAr`LocalDeploy`FileScope`Deploy`Private`client]; 
+              Null]]]], 
        "Schedule" -> <|
         "Type" -> "Repeated", "TotalRunCount" -> DirectedInfinity[1], 
          "RunInterval" -> 0.05, "StartDate" -> 
-         DateObject[{2025, 5, 30, 10, 2, 7.931293964385986}, "Instant", 
+         DateObject[{2025, 5, 30, 17, 37, 12.523775100708008`}, "Instant", 
            "Gregorian", 1.], "EndDate" -> DirectedInfinity[1]|>, 
        HandlerFunctions -> <||>, 
        HandlerFunctionsKeys -> {
@@ -1647,16 +1658,23 @@ client]; Null]]]],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.957584159942883*^9, 3.957584527992613*^9},
- CellLabel->"Out[42]=",
- CellID->269976471,ExpressionUUID->"7ca18344-7e2a-4482-bbc9-d2bcde44a451"]
+ CellChangeTimes->{3.957584159942883*^9, 3.957584527992613*^9, 
+  3.957611832564082*^9},
+ CellLabel->"Out[26]=",
+ CellID->1767226043,ExpressionUUID->"fc97a010-ea0b-4da7-8425-99ca9b8c805c"]
 }, Open  ]],
 
-Cell["\<\
-The \"Properties\" key returns all known properties of a \
-LocalDeploymentObject:\
-\>", "ExampleText",
- CellChangeTimes->{{3.9575843039775257`*^9, 3.957584329850539*^9}},
+Cell[TextData[{
+ "The \"Properties\" key returns all known properties of a ",
+ Cell[BoxData[
+  ButtonBox["LocalDeploymentObject",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ToneAr/LocalDeploy/ref/LocalDeploymentObject"]], 
+  "InlineFormula",ExpressionUUID->"fbe33d4c-04ba-4479-924d-ef7efc917d1f"],
+ ":"
+}], "ExampleText",
+ CellChangeTimes->{{3.9575843039775257`*^9, 3.957584329850539*^9}, 
+   3.9576117846961308`*^9},
  CellID->436869731,ExpressionUUID->"30acfbd7-9256-4956-9a4a-5afea2ea00f0"],
 
 Cell[CellGroupData[{
@@ -1677,12 +1695,17 @@ Cell[BoxData[
  CellID->1204190218,ExpressionUUID->"6f519773-3373-4b19-bb07-ea81387b7539"]
 }, Open  ]],
 
-Cell["\<\
-Query all known properties of LocalDeploymentObject the same as an \
-Association:\
-\>", "ExampleText",
+Cell[TextData[{
+ "Query all known properties of LocalDeploymentObject the same way as an ",
+ Cell[BoxData[
+  ButtonBox["Association",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "e88f641e-e562-4b0f-b68e-b180dfe1b543"],
+ ":"
+}], "ExampleText",
  CellChangeTimes->{{3.9575842862256937`*^9, 3.9575842995229273`*^9}, {
-  3.9575843543427677`*^9, 3.9575843597757*^9}},
+   3.9575843543427677`*^9, 3.9575843597757*^9}, {3.957611737849019*^9, 
+   3.95761173808595*^9}, 3.957611776829035*^9},
  CellID->659376907,ExpressionUUID->"50747141-8bfd-4129-af39-829cd858deab"],
 
 Cell[CellGroupData[{
@@ -2686,8 +2709,16 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
  CellID->847356022,ExpressionUUID->"147e45f3-472a-4f52-83c9-29eb9d45fabb"]
 }, Open  ]],
 
-Cell["Use URLExecute to make a request to the deployment:", "ExampleText",
- CellChangeTimes->{{3.957584412593554*^9, 3.957584432761516*^9}},
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  ButtonBox["URLExecute",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "801e7265-e29d-4407-b426-0274bdd80d37"],
+ " to make a request to the deployment:"
+}], "ExampleText",
+ CellChangeTimes->{{3.957584412593554*^9, 3.957584432761516*^9}, 
+   3.957611764961391*^9},
  CellID->1567308749,ExpressionUUID->"fa11dfe7-63cf-4132-b7a1-052eb4dfc0cb"],
 
 Cell[CellGroupData[{
@@ -2704,8 +2735,16 @@ Cell[BoxData["\<\"4\"\>"], "Output",
  CellID->551415928,ExpressionUUID->"d44ce039-0bd4-497c-bb8d-e5bb86fcb8fe"]
 }, Open  ]],
 
-Cell["Use Normal to return the underlying data Association:", "ExampleText",
- CellChangeTimes->{{3.957584364968307*^9, 3.9575843829380083`*^9}},
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  ButtonBox["Normal",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "38cf88a8-6b97-43c4-86f6-ecea890f4314"],
+ " to return the underlying data:"
+}], "ExampleText",
+ CellChangeTimes->{{3.957584364968307*^9, 3.9575843829380083`*^9}, {
+  3.9576117611894073`*^9, 3.957611790766144*^9}},
  CellID->1691445006,ExpressionUUID->"8ee38472-fbdc-4e79-be3b-73e2d77c6b83"],
 
 Cell[BoxData[
@@ -5423,7 +5462,33 @@ PrintOutput}, AutoRemove -> True|>]"& )],
   "\[RightAssociation]"}]], "Input",
  CellChangeTimes->{{3.957584618974063*^9, 3.9575846311081457`*^9}},
  CellLabel->"Out[40]=",
- CellID->1309941033,ExpressionUUID->"d5e34507-6990-4dd1-92d8-f93114d6b3a3"]
+ CellID->1309941033,ExpressionUUID->"d5e34507-6990-4dd1-92d8-f93114d6b3a3"],
+
+Cell[TextData[{
+ "Dispose the LocalDeploymentObject using ",
+ Cell[BoxData[
+  ButtonBox["Close",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "c6c3accf-a74c-4975-8d37-844daef11369"],
+ ":"
+}], "ExampleText",
+ CellChangeTimes->{{3.957584364968307*^9, 3.9575843829380083`*^9}, {
+  3.9576117611894073`*^9, 3.957611840296048*^9}},
+ CellID->723922157,ExpressionUUID->"bd62395f-a0eb-491f-8c8d-e07efb923a2c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Close", "[", "dep", "]"}]], "Input",
+ CellChangeTimes->{{3.957611827006621*^9, 3.957611828757127*^9}},
+ CellLabel->"In[27]:=",
+ CellID->2098417496,ExpressionUUID->"fdfca8a2-ea16-4fa7-b97e-1bd195580f89"],
+
+Cell[BoxData["\<\"127.0.0.1:34239\"\>"], "Output",
+ CellChangeTimes->{3.957611835505837*^9},
+ CellLabel->"Out[27]=",
+ CellID->1800302846,ExpressionUUID->"8d3a0926-f38a-4770-a55f-a392369d49da"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -5540,18 +5605,19 @@ Cell["Symbol", "Categorization",
  CellLabel->"Entity Type",
  CellID->1136353843,ExpressionUUID->"e689da45-70d1-430b-b844-67ccf602d7eb"],
 
-Cell["TonyAristeidou/LocalDeploy", "Categorization",
+Cell["ToneAr/LocalDeploy", "Categorization",
  CellLabel->"Paclet Name",
  CellID->648595566,ExpressionUUID->"2043972c-caf3-47eb-ac9d-5de185d5a246"],
 
-Cell["TonyAristeidou`LocalDeploy`", "Categorization",
+Cell["ToneAr`LocalDeploy`", "Categorization",
  CellLabel->"Context",
  CellID->1135397140,ExpressionUUID->"98cc9245-d393-4c2d-8c68-483f8508c974"],
 
-Cell["TonyAristeidou/LocalDeploy/ref/LocalDeploymentObject", "Categorization",
+Cell["ToneAr/LocalDeploy/LocalDeploy/ref/LocalDeploymentObject", \
+"Categorization",
  CellLabel->"URI",
  CellID->1877942906,ExpressionUUID->"eae85dfb-a843-4f6b-9bdc-90681c20e4a0"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -5600,14 +5666,14 @@ ExpressionUUID->"f26aea83-6018-4a8f-867f-9f0a996ef651"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[279866, 5430, 488, 13, 56, "ExtendedExamplesSection",ExpressionUUID->"e23c3ffd-c5f5-4b13-a45c-4b5e927f8242",
+  Cell[282338, 5495, 488, 13, 56, "ExtendedExamplesSection",ExpressionUUID->"e23c3ffd-c5f5-4b13-a45c-4b5e927f8242",
    CellTags->"ExtendedExamples",
    CellID->1612580713]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 285683, 5601}
+ {"ExtendedExamples", 288145, 5667}
  }
 *)
 (*NotebookFileOutline
@@ -5615,139 +5681,147 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[576, 22, 118, 1, 73, "ObjectName",ExpressionUUID->"b9a3618e-ef43-483b-9da6-eeb2279483ec",
  CellID->173825410],
-Cell[697, 25, 865, 19, 76, "Usage",ExpressionUUID->"e12ee63c-d206-42b3-b855-ec14b14c4a5c",
+Cell[697, 25, 873, 20, 76, "Usage",ExpressionUUID->"e12ee63c-d206-42b3-b855-ec14b14c4a5c",
  CellID->1429728079],
-Cell[1565, 46, 521, 12, 26, "Notes",ExpressionUUID->"800679f1-befb-4f32-b536-8187a3898207",
+Cell[1573, 47, 525, 12, 26, "Notes",ExpressionUUID->"800679f1-befb-4f32-b536-8187a3898207",
  CellID->1410910766],
-Cell[2089, 60, 2097, 36, 149, "2ColumnTableMod",ExpressionUUID->"a3478486-009a-4cb1-b7f8-6685e8522fba",
+Cell[2101, 61, 2097, 36, 149, "2ColumnTableMod",ExpressionUUID->"a3478486-009a-4cb1-b7f8-6685e8522fba",
  CellID->2051429791]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4223, 101, 458, 13, 39, "SeeAlsoSection",ExpressionUUID->"fadba4a5-9d9e-4a6e-8a3c-79b096b44c5a",
+Cell[4235, 102, 458, 13, 39, "SeeAlsoSection",ExpressionUUID->"fadba4a5-9d9e-4a6e-8a3c-79b096b44c5a",
  CellID->323942440],
-Cell[4684, 116, 2162, 53, 21, "SeeAlso",ExpressionUUID->"24091bd2-d814-412b-b47a-829f4506f56d",
+Cell[4696, 117, 2170, 53, 21, "SeeAlso",ExpressionUUID->"24091bd2-d814-412b-b47a-829f4506f56d",
  CellID->605824250]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6883, 174, 435, 12, 40, "TechNotesSection",ExpressionUUID->"3dd74cf0-2702-4297-b700-19ac9c733d28",
+Cell[6903, 175, 435, 12, 40, "TechNotesSection",ExpressionUUID->"3dd74cf0-2702-4297-b700-19ac9c733d28",
  CellID->396462532],
-Cell[7321, 188, 100, 1, 18, "Tutorials",ExpressionUUID->"a1bc6d5e-8be8-4d6b-818a-131285847548",
+Cell[7341, 189, 100, 1, 18, "Tutorials",ExpressionUUID->"a1bc6d5e-8be8-4d6b-818a-131285847548",
  CellID->378181052]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7458, 194, 118, 1, 38, "MoreAboutSection",ExpressionUUID->"68835ad2-3aa2-47a9-955d-c47ae4908593",
+Cell[7478, 195, 118, 1, 38, "MoreAboutSection",ExpressionUUID->"68835ad2-3aa2-47a9-955d-c47ae4908593",
  CellID->1874900747],
-Cell[7579, 197, 101, 1, 18, "MoreAbout",ExpressionUUID->"08de4ccb-ca9f-40fa-9966-f5be261365c6",
+Cell[7599, 198, 101, 1, 18, "MoreAbout",ExpressionUUID->"08de4ccb-ca9f-40fa-9966-f5be261365c6",
  CellID->1663529193]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7717, 203, 472, 13, 39, "RelatedLinksSection",ExpressionUUID->"474199c5-3e95-4ecd-bc9e-f26086c41ee5",
+Cell[7737, 204, 472, 13, 39, "RelatedLinksSection",ExpressionUUID->"474199c5-3e95-4ecd-bc9e-f26086c41ee5",
  CellID->783776468],
-Cell[8192, 218, 104, 1, 18, "RelatedLinks",ExpressionUUID->"e8ae128b-283e-4f6b-a5de-829e1b7b736d",
+Cell[8212, 219, 104, 1, 18, "RelatedLinks",ExpressionUUID->"e8ae128b-283e-4f6b-a5de-829e1b7b736d",
  CellID->2114451875]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8333, 224, 531, 14, 68, "ExamplesInitializationSection",ExpressionUUID->"4f1a3548-a01d-4c28-9719-be5eaf774bcc",
+Cell[8353, 225, 531, 14, 68, "ExamplesInitializationSection",ExpressionUUID->"4f1a3548-a01d-4c28-9719-be5eaf774bcc",
  CellID->1096355213],
-Cell[8867, 240, 245, 4, 46, "ExampleInitialization",ExpressionUUID->"2a7f1c7f-7870-4e8f-ace9-9b174a49effa",
+Cell[8887, 241, 245, 4, 46, "ExampleInitialization",ExpressionUUID->"2a7f1c7f-7870-4e8f-ace9-9b174a49effa",
  CellID->97878906]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9149, 249, 443, 12, 71, "PrimaryExamplesSection",ExpressionUUID->"1bdf6d11-c1ea-4fb0-a2a8-e20a0072723a",
+Cell[9169, 250, 443, 12, 71, "PrimaryExamplesSection",ExpressionUUID->"1bdf6d11-c1ea-4fb0-a2a8-e20a0072723a",
  CellID->1256359291],
-Cell[9595, 263, 196, 2, 23, "ExampleText",ExpressionUUID->"20549113-fff3-46a3-8256-99347b7dc9f9",
+Cell[9615, 264, 196, 2, 23, "ExampleText",ExpressionUUID->"20549113-fff3-46a3-8256-99347b7dc9f9",
  CellID->1777529964],
 Cell[CellGroupData[{
-Cell[9816, 269, 388, 8, 27, "Input",ExpressionUUID->"3a368ddf-be0e-4967-a17b-b2ce306b193b",
+Cell[9836, 270, 388, 8, 27, "Input",ExpressionUUID->"3a368ddf-be0e-4967-a17b-b2ce306b193b",
  CellID->54085286],
-Cell[10207, 279, 73005, 1372, 58, "Output",ExpressionUUID->"7ca18344-7e2a-4482-bbc9-d2bcde44a451",
- CellID->269976471]
+Cell[10227, 280, 73759, 1383, 58, "Output",ExpressionUUID->"fc97a010-ea0b-4da7-8425-99ca9b8c805c",
+ CellID->1767226043]
 }, Open  ]],
-Cell[83227, 1654, 255, 5, 23, "ExampleText",ExpressionUUID->"30acfbd7-9256-4956-9a4a-5afea2ea00f0",
+Cell[84001, 1666, 494, 11, 23, "ExampleText",ExpressionUUID->"30acfbd7-9256-4956-9a4a-5afea2ea00f0",
  CellID->436869731],
 Cell[CellGroupData[{
-Cell[83507, 1663, 173, 3, 26, "Input",ExpressionUUID->"f256a6a7-8aa0-4b10-abb9-0edfd3adfd2e",
+Cell[84520, 1681, 173, 3, 26, "Input",ExpressionUUID->"f256a6a7-8aa0-4b10-abb9-0edfd3adfd2e",
  CellID->1661425942],
-Cell[83683, 1668, 420, 8, 43, "Output",ExpressionUUID->"6f519773-3373-4b19-bb07-ea81387b7539",
+Cell[84696, 1686, 420, 8, 43, "Output",ExpressionUUID->"6f519773-3373-4b19-bb07-ea81387b7539",
  CellID->1204190218]
 }, Open  ]],
-Cell[84118, 1679, 306, 6, 23, "ExampleText",ExpressionUUID->"50747141-8bfd-4129-af39-829cd858deab",
+Cell[85131, 1697, 523, 11, 23, "ExampleText",ExpressionUUID->"50747141-8bfd-4129-af39-829cd858deab",
  CellID->659376907],
 Cell[CellGroupData[{
-Cell[84449, 1689, 415, 11, 27, "Input",ExpressionUUID->"1ffd2269-01eb-4649-9177-3f77ff50a968",
+Cell[85679, 1712, 415, 11, 27, "Input",ExpressionUUID->"1ffd2269-01eb-4649-9177-3f77ff50a968",
  CellID->1936599715],
-Cell[84867, 1702, 53965, 983, 310, "Output",ExpressionUUID->"147e45f3-472a-4f52-83c9-29eb9d45fabb",
+Cell[86097, 1725, 53965, 983, 310, "Output",ExpressionUUID->"147e45f3-472a-4f52-83c9-29eb9d45fabb",
  CellID->847356022]
 }, Open  ]],
-Cell[138847, 2688, 216, 2, 23, "ExampleText",ExpressionUUID->"fa11dfe7-63cf-4132-b7a1-052eb4dfc0cb",
+Cell[140077, 2711, 393, 10, 23, "ExampleText",ExpressionUUID->"fa11dfe7-63cf-4132-b7a1-052eb4dfc0cb",
  CellID->1567308749],
 Cell[CellGroupData[{
-Cell[139088, 2694, 230, 4, 26, "Input",ExpressionUUID->"f4bc24d4-14fa-4e8e-91ea-eb5d561af324",
+Cell[140495, 2725, 230, 4, 26, "Input",ExpressionUUID->"f4bc24d4-14fa-4e8e-91ea-eb5d561af324",
  CellID->662156504],
-Cell[139321, 2700, 201, 3, 25, "Output",ExpressionUUID->"d44ce039-0bd4-497c-bb8d-e5bb86fcb8fe",
+Cell[140728, 2731, 201, 3, 25, "Output",ExpressionUUID->"d44ce039-0bd4-497c-bb8d-e5bb86fcb8fe",
  CellID->551415928]
 }, Open  ]],
-Cell[139537, 2706, 220, 2, 23, "ExampleText",ExpressionUUID->"8ee38472-fbdc-4e79-be3b-73e2d77c6b83",
+Cell[140944, 2737, 410, 10, 23, "ExampleText",ExpressionUUID->"8ee38472-fbdc-4e79-be3b-73e2d77c6b83",
  CellID->1691445006],
-Cell[139760, 2710, 231, 4, 26, "Input",ExpressionUUID->"ffe6ab32-1323-4e20-9d8a-39a727b44692",
+Cell[141357, 2749, 231, 4, 26, "Input",ExpressionUUID->"ffe6ab32-1323-4e20-9d8a-39a727b44692",
  CellID->982750453],
-Cell[139994, 2716, 139835, 2709, 500, "Input",ExpressionUUID->"d5e34507-6990-4dd1-92d8-f93114d6b3a3",
- CellID->1309941033]
+Cell[141591, 2755, 139835, 2709, 500, "Input",ExpressionUUID->"d5e34507-6990-4dd1-92d8-f93114d6b3a3",
+ CellID->1309941033],
+Cell[281429, 5466, 414, 10, 23, "ExampleText",ExpressionUUID->"bd62395f-a0eb-491f-8c8d-e07efb923a2c",
+ CellID->723922157],
+Cell[CellGroupData[{
+Cell[281868, 5480, 226, 4, 26, "Input",ExpressionUUID->"fdfca8a2-ea16-4fa7-b97e-1bd195580f89",
+ CellID->2098417496],
+Cell[282097, 5486, 192, 3, 25, "Output",ExpressionUUID->"8d3a0926-f38a-4770-a55f-a392369d49da",
+ CellID->1800302846]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[279866, 5430, 488, 13, 56, "ExtendedExamplesSection",ExpressionUUID->"e23c3ffd-c5f5-4b13-a45c-4b5e927f8242",
+Cell[282338, 5495, 488, 13, 56, "ExtendedExamplesSection",ExpressionUUID->"e23c3ffd-c5f5-4b13-a45c-4b5e927f8242",
  CellTags->"ExtendedExamples",
  CellID->1612580713],
-Cell[280357, 5445, 241, 5, 32, "ExampleSection",ExpressionUUID->"abaa45af-6d47-412e-876f-4ff508af3fa4",
+Cell[282829, 5510, 241, 5, 32, "ExampleSection",ExpressionUUID->"abaa45af-6d47-412e-876f-4ff508af3fa4",
  CellID->349734219],
-Cell[280601, 5452, 264, 5, 20, "ExampleSection",ExpressionUUID->"c140f357-53a1-4553-a2eb-0b11b1a0812d",
+Cell[283073, 5517, 264, 5, 20, "ExampleSection",ExpressionUUID->"c140f357-53a1-4553-a2eb-0b11b1a0812d",
  CellID->182223607],
-Cell[280868, 5459, 244, 5, 20, "ExampleSection",ExpressionUUID->"d3e5379c-791b-44eb-b870-9ccf5586bb51",
+Cell[283340, 5524, 244, 5, 20, "ExampleSection",ExpressionUUID->"d3e5379c-791b-44eb-b870-9ccf5586bb51",
  CellID->1966191362],
-Cell[281115, 5466, 248, 5, 20, "ExampleSection",ExpressionUUID->"aa7cad14-8735-4f31-a0b9-bbc51dfcfe13",
+Cell[283587, 5531, 248, 5, 20, "ExampleSection",ExpressionUUID->"aa7cad14-8735-4f31-a0b9-bbc51dfcfe13",
  CellID->973550986],
-Cell[281366, 5473, 259, 5, 20, "ExampleSection",ExpressionUUID->"512b925b-7a85-4008-9c31-bf460fe90026",
+Cell[283838, 5538, 259, 5, 20, "ExampleSection",ExpressionUUID->"512b925b-7a85-4008-9c31-bf460fe90026",
  CellID->2048799814],
-Cell[281628, 5480, 252, 5, 20, "ExampleSection",ExpressionUUID->"84cea8c4-d15b-4dd0-a324-ef26de2ba143",
+Cell[284100, 5545, 252, 5, 20, "ExampleSection",ExpressionUUID->"84cea8c4-d15b-4dd0-a324-ef26de2ba143",
  CellID->1584415515],
-Cell[281883, 5487, 257, 5, 20, "ExampleSection",ExpressionUUID->"f810473f-8e79-4f9a-91a5-00cd5036bfb2",
+Cell[284355, 5552, 257, 5, 20, "ExampleSection",ExpressionUUID->"f810473f-8e79-4f9a-91a5-00cd5036bfb2",
  CellID->1413548916],
-Cell[282143, 5494, 250, 5, 20, "ExampleSection",ExpressionUUID->"0227041a-4a9f-4e06-b7a5-91b311107e41",
+Cell[284615, 5559, 250, 5, 20, "ExampleSection",ExpressionUUID->"0227041a-4a9f-4e06-b7a5-91b311107e41",
  CellID->2048709899]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[282430, 5504, 111, 1, 71, "MetadataSection",ExpressionUUID->"11ad34ee-dcd1-47d7-bbfe-9012221eeef1",
+Cell[284902, 5569, 111, 1, 71, "MetadataSection",ExpressionUUID->"11ad34ee-dcd1-47d7-bbfe-9012221eeef1",
  CellID->1640434356],
-Cell[282544, 5507, 477, 12, 25, "History",ExpressionUUID->"f3ac940d-3cbc-4d0b-b96e-9e00cab33c74",
+Cell[285016, 5572, 477, 12, 25, "History",ExpressionUUID->"f3ac940d-3cbc-4d0b-b96e-9e00cab33c74",
  CellID->2022632191],
 Cell[CellGroupData[{
-Cell[283046, 5523, 484, 13, 20, "CategorizationSection",ExpressionUUID->"c0ab9c06-194a-4dbd-842f-7bc5fad8ac09",
+Cell[285518, 5588, 484, 13, 20, "CategorizationSection",ExpressionUUID->"c0ab9c06-194a-4dbd-842f-7bc5fad8ac09",
  CellID->429963360],
-Cell[283533, 5538, 135, 2, 33, "Categorization",ExpressionUUID->"e689da45-70d1-430b-b844-67ccf602d7eb",
+Cell[286005, 5603, 135, 2, 33, "Categorization",ExpressionUUID->"e689da45-70d1-430b-b844-67ccf602d7eb",
  CellID->1136353843],
-Cell[283671, 5542, 154, 2, 33, "Categorization",ExpressionUUID->"2043972c-caf3-47eb-ac9d-5de185d5a246",
+Cell[286143, 5607, 146, 2, 33, "Categorization",ExpressionUUID->"2043972c-caf3-47eb-ac9d-5de185d5a246",
  CellID->648595566],
-Cell[283828, 5546, 152, 2, 33, "Categorization",ExpressionUUID->"98cc9245-d393-4c2d-8c68-483f8508c974",
+Cell[286292, 5611, 144, 2, 33, "Categorization",ExpressionUUID->"98cc9245-d393-4c2d-8c68-483f8508c974",
  CellID->1135397140],
-Cell[283983, 5550, 173, 2, 33, "Categorization",ExpressionUUID->"eae85dfb-a843-4f6b-9bdc-90681c20e4a0",
+Cell[286439, 5615, 179, 3, 33, "Categorization",ExpressionUUID->"eae85dfb-a843-4f6b-9bdc-90681c20e4a0",
  CellID->1877942906]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[284193, 5557, 110, 1, 20, "KeywordsSection",ExpressionUUID->"a4015f9b-9da0-4b4c-bc1d-f09f127d5716",
+Cell[286655, 5623, 110, 1, 30, "KeywordsSection",ExpressionUUID->"a4015f9b-9da0-4b4c-bc1d-f09f127d5716",
  CellID->835187564],
-Cell[284306, 5560, 99, 1, 70, "Keywords",ExpressionUUID->"98cef942-5ca4-4775-9f42-5764fc086c1d",
+Cell[286768, 5626, 99, 1, 70, "Keywords",ExpressionUUID->"98cef942-5ca4-4775-9f42-5764fc086c1d",
  CellID->869079615]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[284442, 5566, 120, 1, 20, "TemplatesSection",ExpressionUUID->"606074ac-ed88-47da-bcd1-f46c4ccf9bf3",
+Cell[286904, 5632, 120, 1, 20, "TemplatesSection",ExpressionUUID->"606074ac-ed88-47da-bcd1-f46c4ccf9bf3",
  CellID->1634121694],
-Cell[284565, 5569, 149, 2, 70, "Template",ExpressionUUID->"5bbf8016-8dfd-46e3-be38-f0ea5ff6e60c",
+Cell[287027, 5635, 149, 2, 70, "Template",ExpressionUUID->"5bbf8016-8dfd-46e3-be38-f0ea5ff6e60c",
  CellID->1441011814],
-Cell[284717, 5573, 138, 2, 70, "Template",ExpressionUUID->"4ed160fa-f1a2-459d-a6db-4ade1db7c187",
+Cell[287179, 5639, 138, 2, 70, "Template",ExpressionUUID->"4ed160fa-f1a2-459d-a6db-4ade1db7c187",
  CellID->1265542147],
-Cell[284858, 5577, 136, 2, 70, "Template",ExpressionUUID->"a3c057c8-d792-4c2d-a84a-abec25b6339e",
+Cell[287320, 5643, 136, 2, 70, "Template",ExpressionUUID->"a3c057c8-d792-4c2d-a84a-abec25b6339e",
  CellID->2012302746],
-Cell[284997, 5581, 138, 2, 70, "Template",ExpressionUUID->"1ed2af5b-0df7-4a90-b2dd-9bf425e7845e",
+Cell[287459, 5647, 138, 2, 70, "Template",ExpressionUUID->"1ed2af5b-0df7-4a90-b2dd-9bf425e7845e",
  CellID->1168428913]
 }, Closed]]
 }, Open  ]]

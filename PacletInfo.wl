@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 PacletObject[
 	<|
 		"Name" -> "ToneAr/LocalDeploy",
@@ -9,23 +11,22 @@ PacletObject[
 		"WolframVersion" -> "12.2+",
 		"PrimaryContext" -> "ToneAr`LocalDeploy`",
 		"Extensions" -> {
-		{"Kernel",
+		{
+			"Kernel",
 			"Root" -> "Kernel",
 			"Context" -> "ToneAr`LocalDeploy`",
 			"Symbols" -> {
 				"ToneAr`LocalDeploy`LocalDeploy",
-				"ToneAr`LocalDeploy`LocalDeploymentObject"
+				"ToneAr`LocalDeploy`LocalDeploymentObject",
+				"ToneAr`LocalDeploy`LocalDeployments"
 			}
 		},
-		{"Asset",
+		{
+			"Asset",
 			"Root" -> "Resources",
-			"Assets" -> {
-				{"icon.svg", "icon.svg"}
-			}
+			"Assets" -> {{"icon.svg", "Icons/icon.svg"}}
 		},
-		{"Documentation",
-			"Language" -> "English"
-		}
+		{"Documentation", "Language" -> "English"}
 		}
 	|>
 ]
