@@ -141,7 +141,12 @@ LocalDeploy[expr_, port: portP : Automatic, OptionsPattern[]] := Module[{
 					]
 			|>,
 			<|
-				Repeated[(Rule|RuleDelayed)[_String, Except[_?(FailureQ)]]]
+				Repeated[
+					(Rule|RuleDelayed)[
+						_String | _StringExpression,
+						Except[_?(FailureQ)]
+					]
+				]
 			|>,
 			"Failed to generate endpoints"
 		];
