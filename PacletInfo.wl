@@ -7,7 +7,7 @@ PacletObject[
 		"Creator" -> "Antonis Aristeidou",
 		"License" -> "MIT",
 		"PublisherID" -> "ToneAr",
-		"Version" -> "2.0.1",
+		"Version" -> "2.1.1",
 		"WolframVersion" -> "12.2+",
 		"PrimaryContext" -> "ToneAr`LocalDeploy`",
 		"Extensions" -> {

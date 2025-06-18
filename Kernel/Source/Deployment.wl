@@ -58,12 +58,16 @@ submitQueueEvaluationScheduledTask[
 		],
 		evalFreq
 	]
+
+
 (* -------------------------------------------------------------------------- *)
 (* ::Section:: *)(* LocalDeployments *)
 (* Description:  Returns a list of all active local deployments.
  * Return:       {___LocalDeploymentObject}
  *)
 LocalDeployments[] := $localDeployments["Values"];
+
+
 (* -------------------------------------------------------------------------- *)
 (* ::Section:: *)(* LocalDeploy *)
 (* Description:  LocalDeploy is a function that deploys a local async HTTP server
@@ -72,13 +76,16 @@ LocalDeployments[] := $localDeployments["Values"];
 LocalDeploy // Options = {
 	OverwriteTarget       -> True,
 	"HostAddress"         -> "localhost",
-	"EvaluationInterval" -> Quantity[50, "Milliseconds"],
+	"EvaluationInterval"  -> Quantity[50, "Milliseconds"],
 	HandlerFunctions      -> <||>,
 	"LaunchKernels"       -> True,
-	"InitialKernelCount"  -> Min[$ProcessorCount * 2, 12]
+	"InitialKernelCount"  -> Min[$ProcessorCount * 2, 12],
+	"Dependencies"        -> Automatic,
+	"SharedVariables"     -> {},
+	"SharedFunctions"     -> {}
 };
 LocalDeploy[expr_, port: portP : Automatic, OptionsPattern[]] := Module[{
-		listener,server,url,endpoints, enclose, task, ldObj,
+		listener,server,url,endpoints, enclose, task, ldObj, symbols,
 		responseQueue = CreateDataStructure["Queue"],
 		base = OptionValue["HostAddress"],
 		handlers = OptionValue[HandlerFunctions]
@@ -105,6 +112,27 @@ LocalDeploy[expr_, port: portP : Automatic, OptionsPattern[]] := Module[{
 				],
 				LaunchKernels[OptionValue["InitialKernelCount"] - kCount]
 			]
+		];
+		(* Distribute definitions *)
+		symbols = Cases[
+			Map[HoldForm, Internal`AllSymbols[ expr ], {2}],
+			_?(! MemberQ[Names["System`*"], ToString@#] &),
+			{2}
+		];
+		Which[
+			OptionValue["Dependencies"] === Automatic,
+				DistributeDefinitions @@ Complement[symbols,
+					OptionValue["SharedVariables"],
+					OptionValue["SharedFunctions"]
+				],
+			ListQ[OptionValue["Dependencies"]] && Length[OptionValue["Dependencies"]] > 0,
+				DistributeDefinitions @@ OptionValue["Dependencies"];
+		];
+		If[Length[OptionValue["SharedVariables"]] > 0,
+			SetSharedVariable @@ OptionValue["SharedVariables"];
+		];
+		If[Length[OptionValue["SharedFunctions"]] > 0,
+			SetSharedFunction @@ OptionValue["SharedFunctions"];
 		];
 		(* Deploy queue evaluation loop task *)
 		task = ConfirmMatch[
@@ -157,7 +185,7 @@ LocalDeploy[expr_, port: portP : Automatic, OptionsPattern[]] := Module[{
 					"Listener"    -> listener,
 					"Socket"      -> server,
 					"HostAddress" -> base,
-					"HostPort"    -> port,
+					"HostPort"    -> server["DestinationPort"],
 					"URL"         -> url,
 					"Endpoints"   -> endpoints,
 					"EvaluationQueueTask" -> task,
